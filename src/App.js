@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Routes >
         <Route path='/' element={<Main />}>
-          <Route path='dashboard' element={<Dashboard />} />
+          <Route index element={<Dashboard />} />
           <Route path='subscriptions' element={<Subscriptions />} />
           <Route path='id-verification' element={<IdVerification />} />
           <Route path='settings' element={<Settings />} />

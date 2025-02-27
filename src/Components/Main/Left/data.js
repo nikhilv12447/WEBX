@@ -15,7 +15,7 @@ export default [
     {
         icon: barChart,
         name: "Dashboard",
-        nevigate: "/dashboard"
+        nevigate: "/"
     },
     {
         icon: layer,
