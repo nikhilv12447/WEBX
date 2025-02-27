@@ -1,15 +1,12 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import "./style.css"
 function ToggleButton({ toggleBetween, onToggle, style }) {
     const [buttonState, setButtonState] = useState(0)
 
-    useEffect(() => {
-        onToggle(buttonState, toggleBetween[buttonState])
-    }, [buttonState])
-
     function handleOnClick(event) {
         const state = parseInt(event.target.getAttribute("data-state"))
         setButtonState(state)
+        onToggle && onToggle(state, toggleBetween[state])
     }
 
     const [btn1, btn2] = toggleBetween
