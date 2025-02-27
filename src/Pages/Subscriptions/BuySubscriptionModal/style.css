@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .wallet-balance-container {
+        @apply w-full py-4 px-[26px] rounded-xl border border-[#E4E7EC] mb-4;
+        background-image: linear-gradient(92.9deg, #088C8E 1.06%, #9CF01E 165.91%);
+        ;
+    }
+
+    .select-bank {
+        @apply border border-[#D0D5DD] w-full py-[10px] px-[14px] rounded-lg;
+    }
+
+    .select-bank::after {
+        @apply pr-[14px];
+    }
+
+    .modal-btn {
+        @apply w-[220px];
+    }
+
+    .modal-btn span {
+        @apply w-[220px] mx-auto;
+    }
+
+    .buy-now-btn {
+        @apply w-[220px];
+    }
+}

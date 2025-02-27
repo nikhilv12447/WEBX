@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    :root {
+        --left-section-height: calc(100vh - 72px);
+    }
+}
+
+@layer components {
+    .left-section-height {
+        height: var(--left-section-height);
+    }
+
+    .active-btn {
+        @apply w-[248px];
+    }
+}

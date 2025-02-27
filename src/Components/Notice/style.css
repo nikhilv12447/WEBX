@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .notice-board {
+        @apply bg-[#FFF7E1] p-4 flex gap-4 mx-6 rounded-xl items-start;
+    }
+} 

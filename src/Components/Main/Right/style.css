@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .right-container {
+        @apply w-full text-left px-8 pt-8 pb-8;
+        background-image: linear-gradient(94.11deg, rgba(112, 224, 0, 0.1) 4.14%, rgba(0, 128, 0, 0.1) 98.8%);
+    }
+}

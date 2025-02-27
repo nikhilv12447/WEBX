@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .list-item{
+        @apply px-[13px] py-[8px] cursor-pointer font-normal text-[#222222]
+    }
+}

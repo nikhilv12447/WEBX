@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .subscription-btn {
+        @apply font-medium text-sm gap-[6px];
+    }
+
+    .subscription-hisory {
+        @apply w-full px-6 rounded-br-2xl;
+    }
+
+    .subscription-hisory th {
+        @apply py-[13px] font-medium text-xs text-[#475467];
+    }
+
+    .subscription-hisory td {
+        @apply py-[26px] font-normal text-sm text-[#475467];
+    }
+
+    .subscription-hisory tr {
+        @apply border-b border-[#E4E7EC];
+    }
+
+    .subscription-hisory tr:nth-child(1) {
+        @apply border-t border-[#E4E7EC];
+    }
+
+    .subscription-hisory tr:nth-child(odd) {
+        @apply bg-[#F9FAFB];
+    }
+
+    .plan-type {
+        @apply py-3 px-5 font-normal text-base;
+    }
+
+    .active-plan {
+        @apply py-[14.5px] px-4;
+    }
+}

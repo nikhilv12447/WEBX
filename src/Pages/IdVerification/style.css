@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    .id-verification-container {
+        @apply flex justify-between py-[14px] pl-8 pr-[41px] rounded-2xl;
+        background-image: linear-gradient(104.14deg, #068A90 45.89%, #9FF21C 155.66%);
+    }
+
+    .active-card-container {
+        @apply p-[1px] rounded-2xl;
+        background-image: linear-gradient(90deg, #068A90 0%, #9FF21C 100%);
+    }
+
+    .active-icon-bg {
+        background: linear-gradient(92.9deg, #088C8E 1.06%, #9CF01E 165.91%);
+    }
+
+    .dropdown-style {
+        @apply !rounded-[26px] mt-[6px];
+    }
+}

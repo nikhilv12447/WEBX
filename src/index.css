@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --button-freelancer-color: linear-gradient(92.9deg, #088C8E 1.06%, #9CF01E 165.91%);
+    --text-color: #101828;
+    --text-color2: #475467;
+    --form-label-color: #344054;
+  }
+}
+
+@layer components {
+  body{
+    @apply overflow-hidden;
+  }
+
+  .text-primary-color {
+    @apply text-[var(--text-color)];
+  }
+
+  .text-color2 {
+    @apply text-[var(--text-color2)];
+  }
+
+  .form-label-color {
+    @apply text-[var(--form-label-color)];
+  }
+}

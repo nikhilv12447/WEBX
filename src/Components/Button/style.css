@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .primary-btn {
+        @apply flex gap-3 py-2 px-4 rounded-[39px] items-center;
+    }
+
+    .primary-btn-active {
+        @apply text-white;
+        background-image: var(--button-freelancer-color);
+    }
+
+    .sec-inactive-button-bg {
+        @apply p-[1px] rounded-[39px];
+        background-image: linear-gradient(90deg, #068A90 0%, #02C685 100%);
+    }
+    .sec-inactive-button-bg button {
+        @apply bg-white;
+    }
+}
