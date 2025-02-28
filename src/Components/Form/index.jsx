@@ -26,7 +26,7 @@ function getForm(formConfig = [], formData, setFormData, isInLine) {
                     case "DROP_DOWN":
                         return <div className={isInLine ? "w-full" : "mb-5 w-full"}>
                             <label className="font-medium text-sm form-label-color" htmlFor={id}>{label}</label>
-                            <DropDown placeHolder={placeholder} options={options} style="form-dropdown-style" onSelect={(value, text) => setFormData({ ...formData, [key]: value })} defaultValue={defaultValue} />
+                            <DropDown placeHolder={placeholder} options={options} style="form-dropdown-style" onSelect={(value, text) => setFormData({ ...formData, [key]: value })} defaultValue={formData.hasOwnProperty(key) ? formData[key] : defaultValue} />
                         </div>
                     case "FILE":
                         return <div className={isInLine ? "w-full" : "mb-5 w-full"}>
@@ -43,7 +43,7 @@ function getForm(formConfig = [], formData, setFormData, isInLine) {
                                     </button>
                                 }
                             </div>
-                            <TextArea id={id} placeholder={placeholder} options={options} style="form-text-area-style" handleOnChange={(e) => setFormData({ ...formData, [key]: e.target.value })} value={defaultValue} />
+                            <TextArea id={id} placeholder={placeholder} options={options} style="form-text-area-style" handleOnChange={(e) => setFormData({ ...formData, [key]: e.target.value })} value={formData.hasOwnProperty(key) ? formData[key] : defaultValue} />
                         </div>
                     case "DATE":
                         return <div className={isInLine ? "w-full" : "mb-5 w-full"}>
@@ -55,8 +55,8 @@ function getForm(formConfig = [], formData, setFormData, isInLine) {
         }
     </div>
 }
-function Form({ formConfig = [], onFormChange }) {
-    const [formData, setFormData] = useState({})
+function Form({ formConfig = [], data = {}, onFormChange }) {
+    const [formData, setFormData] = useState(data)
 
     useEffect(() => {
         onFormChange && onFormChange(formData)

@@ -21,6 +21,7 @@ import AddExperienceModal from "./WorkExperienceModal"
 import EducationModal from "./EducationModal"
 import AddPortfolioModal from "./AddPortfolioModal"
 import AddUpdateSkillModal from "./AddUpdateSkillModal"
+import { getFormatedDate } from "../../../utils/dateTime"
 
 const projects = [
     {
@@ -64,14 +65,37 @@ const reviews = [
     }
 ]
 
+const workExperiences = [
+    {
+        title: "Professional HTML Developer",
+        organization: "Softking",
+        address: "Uttara Dhaka 1203",
+        shortDescription: "Yes, I am familiar with Bill Gates. Bill Gates is a renowned American business magnate, software developer, philanthropist, and author. He co-founded Microsoft Corporation in 1975 with his childhood friend Paul Allen.",
+        startDate: new Date("Mar 20, 2023"),
+        endDate: new Date("Mar 29, 2023")
+    }
+]
+
+const educations = [
+    {
+        institution: "Dhaka International University",
+        degree: "Computer Science and Engineering",
+        major: "BSC in CSE",
+        startDate: new Date("Mar 15, 2023"),
+        endDate: new Date("Mar 23, 2023")
+    }
+]
+
 const portfolio = [
     {
         title: "Service Martketplace",
-        date: "Nov 5, 2023"
+        date: "Nov 5, 2023",
+        description: "Description"
     },
     {
         title: "Multi Vendor Ecommerce Marketplace",
-        date: "Nov 5, 2023"
+        date: "Nov 5, 2023",
+        description: "Description"
     }
 ]
 
@@ -83,6 +107,7 @@ function Profile() {
     const [showEducationModal, setShowEducationModal] = useState({ show: false, edit: false })
     const [showPortfolioModal, setShowPortfolioModal] = useState({ show: false, edit: false })
     const [showAddUpdateSkillModal, setShowAddUpdateSkillModal] = useState(false)
+    const [formDataForEdit, setFormDataForEdit] = useState({})
 
     function handleClosePersonalInfoModal() {
         setShowPersonalInfoModal(false)
@@ -174,13 +199,40 @@ function Profile() {
                 <div className="px-6 pt-[30px] pb-[38px] rounded-2xl bg-white mb-6">
                     <Title name="Work Experience" icon={plusIcon} onClick={() => { setShowAddExperienceModal({ edit: false, show: true }) }} />
 
-                    <Experience univercity="Softking" designation="PHP Laravel Developer" location="Uttara Dhaka 1203" dateRange="Mar 20, 2023 - Mar 29, 2023" onEditClick={() => { setShowAddExperienceModal({ show: true, edit: true }) }} />
+                    {
+                        workExperiences.map(({ address, endDate, organization, shortDescription, startDate, title }, index) => <Experience
+                            key={index}
+                            univercity={organization}
+                            designation="PHP Laravel Developer"
+                            location={address}
+                            dateRange={`${getFormatedDate(startDate)} - ${getFormatedDate(endDate)}`}
+                            onEditClick={() => {
+                                setFormDataForEdit({ address, endDate, organization, shortDescription, startDate, title })
+                                setShowAddExperienceModal({ show: true, edit: true })
+                            }}
+                        />)
+                    }
+
+
                 </div>
 
                 <div className="p-6 rounded-2xl bg-white mb-6">
                     <Title name="Education" icon={plusIcon} onClick={() => { setShowEducationModal({ edit: false, show: true }) }} />
 
-                    <Education univercity="Dhaka International University" degree="BSC in CSE" branch="Computer Science and Engineering" dateRange="Mar 15, 2023 - Mar 23, 2023" onEditClick={() => { setShowEducationModal({ show: true, edit: true }) }} />
+                    {
+                        educations.map(({ institution, degree, major, startDate, endDate }, index) => <Education
+                            key={index}
+                            univercity={institution}
+                            degree={major}
+                            branch={degree}
+                            dateRange={`${getFormatedDate(startDate)} - ${getFormatedDate(endDate)}`}
+                            onEditClick={() => {
+                                setFormDataForEdit({ institution, degree, major, startDate, endDate })
+                                setShowEducationModal({ show: true, edit: true })
+                            }}
+                        />)
+                    }
+
                 </div>
 
                 <div className="p-6 rounded-2xl bg-white">
@@ -208,23 +260,31 @@ function Profile() {
                     <Title name="Portfolio" icon={plusIcon} onClick={() => { setShowPortfolioModal({ edit: false, show: true }) }} />
 
                     {
-                        portfolio.map(({ title, date }, index) => <PortfolioCard key={index} title={title} date={date} onEditClick={() => { setShowPortfolioModal({ show: true, edit: true }) }} />)
+                        portfolio.map(({ title, date, description }, index) => <PortfolioCard
+                            key={index}
+                            title={title}
+                            date={date}
+                            onEditClick={() => {
+                                setFormDataForEdit({ title, description })
+                                setShowPortfolioModal({ show: true, edit: true })
+                            }}
+                        />)
                     }
                 </div>
             </div>
         </div>
 
         {showPersonalInfoModal && <Modal title="Personal Information" style="w-[612px]" onClose={handleClosePersonalInfoModal}>
-            <PersonalInfoModal onClose={handleClosePersonalInfoModal} />
+            <PersonalInfoModal data={formDataForEdit} onClose={handleClosePersonalInfoModal} />
         </Modal>}
         {showAddExperienceModal.show && <Modal title={showAddExperienceModal.edit ? "Edit work experience" : "Add work experience"} style="w-[612px]" onClose={handleCloseAddExperienceModal}>
-            <AddExperienceModal edit={showAddExperienceModal.edit} onClose={handleCloseAddExperienceModal} />
+            <AddExperienceModal data={formDataForEdit} edit={showAddExperienceModal.edit} onClose={handleCloseAddExperienceModal} />
         </Modal>}
         {showEducationModal.show && <Modal title={showEducationModal.edit ? "Edit education" : "Add education"} style="w-[612px]" onClose={handleCloseEducationModal}>
-            <EducationModal edit={showEducationModal.edit} onClose={handleCloseEducationModal} />
+            <EducationModal data={formDataForEdit} edit={showEducationModal.edit} onClose={handleCloseEducationModal} />
         </Modal>}
         {showPortfolioModal.show && <Modal title={showPortfolioModal.edit ? "Edit portfolio" : "Add portfolio"} style="w-[612px]" onClose={handleClosePortfolioModal}>
-            <AddPortfolioModal edit={showPortfolioModal.edit} onClose={handleClosePortfolioModal} />
+            <AddPortfolioModal data={formDataForEdit} edit={showPortfolioModal.edit} onClose={handleClosePortfolioModal} />
         </Modal>}
         {showAddUpdateSkillModal && <Modal title="Add/ Update skills" style="w-[612px]" onClose={handleCloseAddUpdateSkillModal}>
             <AddUpdateSkillModal />

@@ -6,16 +6,14 @@ export default [
                 id: "first-name",
                 label: "First Name",
                 key: "firstName",
-                placeholder: "Enter First Name",
-                defaultValue: "Ryan"
+                placeholder: "Enter First Name"
             },
             {
                 type: "TEXT",
                 id: "last-name",
                 label: "Last Name",
                 key: "lastName",
-                placeholder: "Enter Last Name",
-                defaultValue: "Wayne"
+                placeholder: "Enter Last Name"
             }
         ]
     },
@@ -24,16 +22,14 @@ export default [
         id: "pro-title",
         label: "Professional Title",
         key: "professionalTitle",
-        placeholder: "Enter Professional Title",
-        defaultValue: "Professional HTML Developer"
+        placeholder: "Enter Professional Title"
     },
     {
         type: "TEXT_AREA",
-        id: "pro-title",
+        id: "my-info",
         label: "Intro about yourself",
-        key: "professionalTitle",
-        placeholder: "Enter Professional Title",
-        defaultValue: "Professional HTML Developer"
+        key: "myInfo",
+        placeholder: "Enter Intro about yourself"
     },
     {
         fields: [
@@ -43,7 +39,6 @@ export default [
                 label: "Your Country",
                 placeholder: "Select Your Country",
                 key: "country",
-                defaultValue: "Argentina",
                 options: [
                     {
                         value: "india",
@@ -54,8 +49,8 @@ export default [
                         text: "Australia"
                     },
                     {
-                        value: "argentina",
-                        text: "Argentina"
+                        value: "lende-pral",
+                        text: "Lende Pral"
                     }
                 ]
             },
@@ -65,7 +60,6 @@ export default [
                 label: "Your State",
                 placeholder: "Select Your State",
                 key: "state",
-                defaultValue: "Buenos Aires",
                 options: [
                     {
                         value: "rajasthan",
@@ -84,3 +78,12 @@ export default [
         ]
     }
 ]
+
+export const data = {
+    firstName: "Ryan",
+    lastName: "Wayne",
+    professionalTitle: "Professional HTML Developer",
+    myInfo: "Yes, I am familiar with Bill Gates. Bill Gates is a renowned American business magnate, software developer, philanthropist, and author. He co-founded Microsoft Corporation in 1975 with his childhood friend Paul Allen.",
+    country: "lende-pral",
+    state: "buenos-aires"
+}

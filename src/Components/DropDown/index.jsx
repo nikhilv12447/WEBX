@@ -3,8 +3,14 @@ import Image from "../Image"
 import downArrowIcon from "./icon/Icon.svg"
 import { useRef, useState } from "react"
 
+function getValueByKey(options, value) {
+    let option = options.find(option => option.value === value)
+
+    return option ? option.text : ""
+}
+
 function DropDown({ options = [], onSelect, placeHolder, defaultValue, style }) {
-    const [queryStr, setQueryStr] = useState(defaultValue)
+    const [queryStr, setQueryStr] = useState(getValueByKey(options, defaultValue))
     const [showDropdown, setShowDropdown] = useState(false)
     const inputRef = useRef()
 
@@ -43,7 +49,7 @@ function DropDown({ options = [], onSelect, placeHolder, defaultValue, style }) 
     return <div className={`border border-[#D0D5DD] rounded-lg relative bg-white ${style}`}>
         <div className="flex justify-between items-center py-[10px] pl-[14px] pr-[12px]" onClick={() => handleDropdown(true)}>
             <input ref={inputRef} className="dropdown-input" placeholder={placeHolder} value={queryStr} onChange={handleOnChange} onBlur={handleOnBlur} />
-            <button><Image url={downArrowIcon} style={showDropdown ? " down-arrow rotate-180" : "down-arrow"} /></button>
+            <button type="button"><Image url={downArrowIcon} style={showDropdown ? " down-arrow rotate-180" : "down-arrow"} /></button>
         </div>
 
         {
