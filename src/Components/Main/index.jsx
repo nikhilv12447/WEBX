@@ -6,10 +6,8 @@ import Header from "../Header"
 function Main() {
     return <div>
         <Header />
-        <div className="flex h-main mt-[72px] main-section ">
-            <LeftSection />
-            <RightSection />
-        </div>
+        <LeftSection />
+        <RightSection />
     </div>
 }
 

@@ -34,7 +34,7 @@ function IdVerification({ }) {
         <div className="bg-white p-6 rounded-2xl">
             <form onSubmit={onFormSubmit}>
                 <Form formConfig={formConfig} onFormChange={formData => setFormData(formData)} />
-                <Button title="Submit" active />
+                <Button title="Submit" activeStyle="w-auto" active />
             </form>
         </div>
 

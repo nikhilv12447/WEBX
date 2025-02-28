@@ -12,7 +12,7 @@
 }
 
 @layer components {
-  body{
+  body {
     @apply overflow-hidden;
   }
 
@@ -26,5 +26,21 @@
 
   .form-label-color {
     @apply text-[var(--form-label-color)];
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-slider-thumb {
+    background: #888;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 }

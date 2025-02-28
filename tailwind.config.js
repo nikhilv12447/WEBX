@@ -29,6 +29,13 @@ module.exports = {
       },
       height: {
         main: "calc(100vh - 72px)"
+      },
+      width: {
+        main: "calc(100vw - 268px)"
+      },
+      margin: {
+        mainTop: "72px",
+        mainLeft: "268px"
       }
     },
   },

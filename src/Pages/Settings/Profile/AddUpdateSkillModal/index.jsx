@@ -32,7 +32,7 @@ function AddUpdateSkillModal({ edit }) {
 
         if (!type) return
 
-        // setSkills([...skills, { name: skill, type }])
+        setSkills([...skills, { name: skill, type }])
     }
 
     function handleOnBlur() {
@@ -42,17 +42,15 @@ function AddUpdateSkillModal({ edit }) {
     }
     return <div className="px-6 pb-6 pt-5">
         <div className="px-[14px] py-[10px] rounded-[28px] border border-borderSecondary relative">
-            <div className="flex flex-row gap-[6px] border-amature">
-                <div className="skill-container-style">
-                    {
-                        skills.map((skill, index) => <div className={`flex flex-row justify-between items-center rounded-md px-[6px] gap-[2px] text-nowrap ${getClass(skill.type)}`}>
-                            <span className="font-medium text-xl basis-1/2">{skill.name}</span>
-                            <button className="basis-1/2" onClick={() => handleDelete(index)}>
-                                <Image url={closeIcon} />
-                            </button>
-                        </div>)
-                    }
-                </div>
+            <div className="flex flex-row gap-[6px] border-amature w-full text-wrap">
+                {
+                    skills.map((skill, index) => <div className={`flex flex-row justify-between items-center rounded-md px-[6px] gap-[2px] text-nowrap ${getClass(skill.type)}`}>
+                        <span className="font-medium text-xl basis-1/2">{skill.name}</span>
+                        <button className="basis-1/2" onClick={() => handleDelete(index)}>
+                            <Image url={closeIcon} />
+                        </button>
+                    </div>)
+                }
                 <input className="outline-none basis-1/3" type="text" onChange={(e) => setSearchQuery(e.target.value)} value={searchQuery} onFocus={() => setShowSuggestion(true)} onBlur={handleOnBlur} />
             </div>
             {

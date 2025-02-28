@@ -9,8 +9,8 @@ function PersonalInfoModal({ onClose }) {
         <form action="">
             <Form formConfig={formConfig} data={data} />
             <div className="flex justify-between gap-6 pt-1">
-                <Button title="close" width="full" style="justify-center" secondaryBtn isHover={false} onClick={onClose} />
-                <Button type="submit" title="Save" width="full" style="justify-center" active isHover={false} />
+                <Button title="close" containerStyle="w-full" style="justify-center" secondaryBtn isHover={false} onClick={onClose} />
+                <Button type="submit" title="Save" containerStyle="w-full" style="justify-center" active isHover={false} />
             </div>
         </form>
     </div>
