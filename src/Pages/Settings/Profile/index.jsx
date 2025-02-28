@@ -3,8 +3,6 @@ import React, { useState } from "react"
 import Button from "../../../Components/Button"
 import EyeIcon from "../icon/Eye"
 import PencilLine from "../icon/PencilLine"
-import Form from "../../../Components/Form"
-import formConfig from "../formConfig"
 import Image from "../../../Components/Image"
 import Status from "../../../Components/Status"
 import OnOff from "../../../Components/Button/OnOff"
@@ -18,12 +16,11 @@ import locationIcon from "../icon/location.svg"
 import graduationHatIcon from "../icon/graduation-hat.svg"
 import Modal from "../../../Components/Modal"
 import Rating from "../../../Components/Rating"
-
-const PersonalInfoModal = React.lazy(() => import("./PersonalInfoModal"))
-const AddExperienceModal = React.lazy(() => import("./WorkExperienceModal"))
-const EducationModal = React.lazy(() => import("./EducationModal"))
-const AddPortfolioModal = React.lazy(() => import("./AddPortfolioModal"))
-const AddUpdateSkillModal = React.lazy(() => import("./AddUpdateSkillModal"))
+import PersonalInfoModal from "./PersonalInfoModal"
+import AddExperienceModal from "./WorkExperienceModal"
+import EducationModal from "./EducationModal"
+import AddPortfolioModal from "./AddPortfolioModal"
+import AddUpdateSkillModal from "./AddUpdateSkillModal"
 
 const projects = [
     {
@@ -86,6 +83,22 @@ function Profile() {
     const [showEducationModal, setShowEducationModal] = useState({ show: false, edit: false })
     const [showPortfolioModal, setShowPortfolioModal] = useState({ show: false, edit: false })
     const [showAddUpdateSkillModal, setShowAddUpdateSkillModal] = useState(false)
+
+    function handleClosePersonalInfoModal() {
+        setShowPersonalInfoModal(false)
+    }
+    function handleCloseAddExperienceModal() {
+        setShowAddExperienceModal({ show: false, edit: false })
+    }
+    function handleCloseEducationModal() {
+        setShowEducationModal({ show: false, edit: false })
+    }
+    function handleClosePortfolioModal() {
+        setShowPortfolioModal({ show: false, edit: false })
+    }
+    function handleCloseAddUpdateSkillModal() {
+        setShowAddUpdateSkillModal(false)
+    }
 
     return <div>
         <div className="bg-white p-6 rounded-2xl border border-[#0023334D] mb-6">
@@ -155,7 +168,7 @@ function Profile() {
                     <Title name="Project Catalogue" icon={plusIcon} />
 
                     {
-                        projects.map(({ description, delivery, price }) => <ProjectOverview description={description} price={price} delivery={delivery} />)
+                        projects.map(({ description, delivery, price }, index) => <ProjectOverview key={index} description={description} price={price} delivery={delivery} />)
                     }
                 </div>
                 <div className="px-6 pt-[30px] pb-[38px] rounded-2xl bg-white mb-6">
@@ -174,7 +187,7 @@ function Profile() {
                     <Title name="Skills" icon={pencilLineIcon} onClick={() => setShowAddUpdateSkillModal(true)} />
                     <div className="flex gap-3">
                         {
-                            skills.map(skill => <div className="py-[10px] px-[14px] border border-borderSecondary rounded-lg">
+                            skills.map((skill, index) => <div key={index} className="py-[10px] px-[14px] border border-borderSecondary rounded-lg">
                                 <span className="font-medium text-sm text-[#344054]">{skill}</span>
                             </div>)
                         }
@@ -187,7 +200,7 @@ function Profile() {
                     <p className="font-medium text-lg text-primaryText mb-[10px]">Reviews</p>
 
                     {
-                        reviews.map(({ name, description, rating, price, date }) => <Review name={name} description={description} rating={rating} price={price} date={date} />)
+                        reviews.map(({ name, description, rating, price, date }, index) => <Review key={index} name={name} description={description} rating={rating} price={price} date={date} />)
                     }
                 </div>
 
@@ -195,17 +208,27 @@ function Profile() {
                     <Title name="Portfolio" icon={plusIcon} onClick={() => { setShowPortfolioModal({ edit: false, show: true }) }} />
 
                     {
-                        portfolio.map(({ title, date }) => <PortfolioCard title={title} date={date} onEditClick={() => { setShowPortfolioModal({ show: true, edit: true }) }} />)
+                        portfolio.map(({ title, date }, index) => <PortfolioCard key={index} title={title} date={date} onEditClick={() => { setShowPortfolioModal({ show: true, edit: true }) }} />)
                     }
                 </div>
             </div>
         </div>
 
-        {showPersonalInfoModal && <Modal title="Personal Information" style="w-[612px]" onClose={() => setShowPersonalInfoModal(false)}> <PersonalInfoModal /> </Modal>}
-        {showAddExperienceModal.show && <Modal title={showAddExperienceModal.edit ? "Edit work experience" : "Add work experience"} style="w-[612px]" onClose={() => setShowAddExperienceModal({ show: false, edit: false })}> <AddExperienceModal edit={showAddExperienceModal.edit} /> </Modal>}
-        {showEducationModal.show && <Modal title={showEducationModal.edit ? "Edit education" : "Add education"} style="w-[612px]" onClose={() => setShowEducationModal({ show: false, edit: false })}> <EducationModal edit={showEducationModal.edit} /> </Modal>}
-        {showPortfolioModal.show && <Modal title={showPortfolioModal.edit ? "Edit portfolio" : "Add portfolio"} style="w-[612px]" onClose={() => setShowPortfolioModal({ show: false, edit: false })}> <AddPortfolioModal edit={showPortfolioModal.edit} /> </Modal>}
-        {showAddUpdateSkillModal && <Modal title="Add/ Update skills" style="w-[612px]" onClose={() => setShowAddUpdateSkillModal(false)}> <AddUpdateSkillModal /> </Modal>}
+        {showPersonalInfoModal && <Modal title="Personal Information" style="w-[612px]" onClose={handleClosePersonalInfoModal}>
+            <PersonalInfoModal onClose={handleClosePersonalInfoModal} />
+        </Modal>}
+        {showAddExperienceModal.show && <Modal title={showAddExperienceModal.edit ? "Edit work experience" : "Add work experience"} style="w-[612px]" onClose={handleCloseAddExperienceModal}>
+            <AddExperienceModal edit={showAddExperienceModal.edit} onClose={handleCloseAddExperienceModal} />
+        </Modal>}
+        {showEducationModal.show && <Modal title={showEducationModal.edit ? "Edit education" : "Add education"} style="w-[612px]" onClose={handleCloseEducationModal}>
+            <EducationModal edit={showEducationModal.edit} onClose={handleCloseEducationModal} />
+        </Modal>}
+        {showPortfolioModal.show && <Modal title={showPortfolioModal.edit ? "Edit portfolio" : "Add portfolio"} style="w-[612px]" onClose={handleClosePortfolioModal}>
+            <AddPortfolioModal edit={showPortfolioModal.edit} onClose={handleClosePortfolioModal} />
+        </Modal>}
+        {showAddUpdateSkillModal && <Modal title="Add/ Update skills" style="w-[612px]" onClose={handleCloseAddUpdateSkillModal}>
+            <AddUpdateSkillModal />
+        </Modal>}
     </div>
 }
 

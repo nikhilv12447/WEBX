@@ -51,11 +51,11 @@ function Settings({ }) {
         <h1 className="font-medium text-3xl text text-primary-color mb-6">Settings</h1>
         <div className="flex flex-row mb-6 items-center">
             {
-                settingTabs.map((({ key, text }) => {
+                settingTabs.map((({ key, text }, index) => {
                     if (key === activeTab) {
-                        return <Button title={text} activeStyle="active-tab" active />
+                        return <Button key={index} title={text} activeStyle="active-tab" active />
                     }
-                    return <div className="py-3 px-5 font-normal text-base text-[#00233380] cursor-pointer" onClick={() => setActiveTab(key)}>
+                    return <div key={index} className="py-3 px-5 font-normal text-base text-[#00233380] cursor-pointer" onClick={() => setActiveTab(key)}>
                         {text}
                     </div>
                 }))

@@ -7,9 +7,8 @@ import Notice from "../../Components/Notice"
 import Status from "../../Components/Status"
 import PlanCard from "./PlanCard/index"
 import Modal from "../../Components/Modal"
-// import BuySubscriptionModal from "./BuySubscriptionModal"
+import BuySubscriptionModal from "./BuySubscriptionModal"
 import data, { plans } from "./data"
-const BuySubscriptionModal = React.lazy(() => import("./BuySubscriptionModal"))
 
 function Subscriptions() {
     const [showPlans, setShowPlans] = useState(false)

@@ -1,14 +1,12 @@
-import { useState } from "react"
 import "./style.css"
 
-function OnOff({ text }) {
-    const [on, setOn] = useState(false)
+function OnOff({ text, onChange }) {
 
     return <div className="flex items-center gap-2">
-        <div className={`w-9 h-5 flex items-center rounded-full relative ${on ? "btn-on" : "btn-off"}`} onClick={() => setOn(!on)}>
-            <div className={`circle absolute ${on ? "animate-btnOn" : ""}`} />
-
-        </div>
+        <label className="switch">
+            <input type="checkbox" onChange={e => onChange && onChange(e.target.checked)} />
+            <span className="slider round"></span>
+        </label>
         <span className="font-medium text-sm text-tertiary">{text}</span>
     </div>
 }

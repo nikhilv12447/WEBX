@@ -3,24 +3,37 @@
 @tailwind utilities;
 
 @layer components {
-    .btn-off {
-        @apply bg-[#DEDFE0];
+    .switch {
+        @apply relative flex items-center w-9 h-5;
     }
 
-    .btn-on {
+    .switch input {
+        @apply opacity-0 w-0 h-0;
+    }
+
+    .slider {
+        @apply w-full h-full flex items-center px-[2px] cursor-pointer bg-[#ccc] duration-[0.4s];
+    }
+
+    .slider:before {
+        @apply size-4 duration-[0.4s];
         background-image: linear-gradient(123.24deg, #068A90 19.8%, #9FF21C 130.66%);
+        content: "";
     }
 
-    .btn-on circle {
-        animation: mymove 5s infinite;
-
-
+    input:checked+.slider {
+        @apply bg-[#9FF21C];
     }
 
-    .circle {
-        @apply size-4 rounded-full;
-        background-image: linear-gradient(123.24deg, #068A90 19.8%, #9FF21C 130.66%);
-        box-shadow: 0px 1px 2px 0px var(#1018280F);
-        box-shadow: 0px 1px 3px 0px var(#1018281A);
+    input:checked+.slider:before {
+        @apply transform-cpu translate-x-4;
+    }
+    
+    .slider.round {
+        @apply rounded-full;
+    }
+
+    .slider.round:before {
+        @apply rounded-full;
     }
 }
