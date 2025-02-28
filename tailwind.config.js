@@ -10,7 +10,14 @@ module.exports = {
         primaryText: "#101828",
         borderSecondary: "#D0D5DD",
         border3: "#E4E7EC",
-        backgroundSec: "#F9FAFB"
+        backgroundSec: "#F9FAFB",
+        placeholderPrimary: "#667085",
+        expert: "#17B26A",
+        bgExpert: "#17B26A1A",
+        intermediate: "#ECA518",
+        bgIntermediate: "#FCB21F1A",
+        amature: "#F04438",
+        bgAmature: "#F044381A"
       },
       keyframes: {
         btnOn: {

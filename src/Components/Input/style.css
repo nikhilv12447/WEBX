@@ -8,6 +8,6 @@
     }
 
     .input-style::placeholder {
-        @apply font-normal text-base text-[#667085]
+        @apply font-normal text-base text-placeholderPrimary
     }
 }

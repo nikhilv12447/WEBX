@@ -4,7 +4,12 @@
 
 @layer components {
 
-    .down-arrow {
-        
+    .dropdown-input {
+        @apply w-full outline-none text-primaryText;
     }
+
+    .dropdown-input::placeholder {
+        @apply font-normal text-base text-placeholderPrimary;
+    }
+
 }

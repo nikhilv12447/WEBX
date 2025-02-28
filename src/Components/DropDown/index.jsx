@@ -42,7 +42,7 @@ function DropDown({ options = [], onSelect, placeHolder, defaultValue, style }) 
 
     return <div className={`border border-[#D0D5DD] rounded-lg relative bg-white ${style}`}>
         <div className="flex justify-between items-center py-[10px] pl-[14px] pr-[12px]" onClick={() => handleDropdown(true)}>
-            <input ref={inputRef} className="font-normal text-base text-[#667085] w-full outline-none" placeholder={placeHolder} value={queryStr} onChange={handleOnChange} onBlur={handleOnBlur} />
+            <input ref={inputRef} className="dropdown-input" placeholder={placeHolder} value={queryStr} onChange={handleOnChange} onBlur={handleOnBlur} />
             <button><Image url={downArrowIcon} style={showDropdown ? " down-arrow rotate-180" : "down-arrow"} /></button>
         </div>
 

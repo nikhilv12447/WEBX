@@ -4,7 +4,6 @@ export default [
         id: "country",
         label: "ID Issuing Country",
         placeholder: "Select Country",
-        style: "dropdown-style",
         key: "country",
         options: [
             {
@@ -24,7 +23,6 @@ export default [
                 id: "state",
                 label: "State",
                 placeholder: "Select State",
-                style: "dropdown-style",
                 key: "state",
                 options: [
                     {
@@ -42,7 +40,6 @@ export default [
                 id: "city",
                 label: "City (Optional)",
                 placeholder: "Select City",
-                style: "dropdown-style",
                 key: "city",
                 options: [
                     {
@@ -62,24 +59,21 @@ export default [
         id: "address",
         label: "Address",
         key: "address",
-        placeholder: "Enter Address",
-        style: "mt-[6px]"
+        placeholder: "Enter Address"
     },
     {
         type: "TEXT",
         id: "zip-code",
         label: "Zip Code",
         key: "zipCode",
-        placeholder: "Enter zip code",
-        style: "mt-[6px]"
+        placeholder: "Enter zip code"
     },
     {
         type: "TEXT",
         id: "national-id",
         label: "National ID Number",
         key: "nationalIdNumber",
-        placeholder: "Enter ID Number",
-        style: "mt-[6px]"
+        placeholder: "Enter ID Number"
     },
 
     {

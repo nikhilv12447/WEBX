@@ -7,7 +7,6 @@ export default [
                 label: "First Name",
                 key: "firstName",
                 placeholder: "Enter First Name",
-                style: "mt-[6px]",
                 defaultValue: "Ryan"
             },
             {
@@ -16,7 +15,6 @@ export default [
                 label: "Last Name",
                 key: "lastName",
                 placeholder: "Enter Last Name",
-                style: "mt-[6px]",
                 defaultValue: "Wayne"
             }
         ]
@@ -27,7 +25,6 @@ export default [
         label: "Professional Title",
         key: "professionalTitle",
         placeholder: "Enter Professional Title",
-        style: "mt-[6px]",
         defaultValue: "Professional HTML Developer"
     },
     {
@@ -36,7 +33,6 @@ export default [
         label: "Intro about yourself",
         key: "professionalTitle",
         placeholder: "Enter Professional Title",
-        style: "mt-[6px]",
         defaultValue: "Professional HTML Developer"
     },
     {
@@ -46,7 +42,6 @@ export default [
                 id: "country",
                 label: "Your Country",
                 placeholder: "Select Your Country",
-                style: "drop-down-style",
                 key: "country",
                 defaultValue: "Argentina",
                 options: [
@@ -69,7 +64,6 @@ export default [
                 id: "state",
                 label: "Your State",
                 placeholder: "Select Your State",
-                style: "drop-down-style",
                 key: "state",
                 defaultValue: "Buenos Aires",
                 options: [

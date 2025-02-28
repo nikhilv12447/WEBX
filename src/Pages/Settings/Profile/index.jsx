@@ -17,8 +17,13 @@ import pencilLineIcon from "../icon/pencil-line.svg"
 import locationIcon from "../icon/location.svg"
 import graduationHatIcon from "../icon/graduation-hat.svg"
 import Modal from "../../../Components/Modal"
+import Rating from "../../../Components/Rating"
 
 const PersonalInfoModal = React.lazy(() => import("./PersonalInfoModal"))
+const AddExperienceModal = React.lazy(() => import("./WorkExperienceModal"))
+const EducationModal = React.lazy(() => import("./EducationModal"))
+const AddPortfolioModal = React.lazy(() => import("./AddPortfolioModal"))
+const AddUpdateSkillModal = React.lazy(() => import("./AddUpdateSkillModal"))
 
 const projects = [
     {
@@ -77,6 +82,10 @@ const skills = ["Android", "Firebase", "Android Foundations", "Mobile App Develo
 
 function Profile() {
     const [showPersonalInfoModal, setShowPersonalInfoModal] = useState(false)
+    const [showAddExperienceModal, setShowAddExperienceModal] = useState({ show: false, edit: false })
+    const [showEducationModal, setShowEducationModal] = useState({ show: false, edit: false })
+    const [showPortfolioModal, setShowPortfolioModal] = useState({ show: false, edit: false })
+    const [showAddUpdateSkillModal, setShowAddUpdateSkillModal] = useState(false)
 
     return <div>
         <div className="bg-white p-6 rounded-2xl border border-[#0023334D] mb-6">
@@ -84,11 +93,11 @@ function Profile() {
                 <div className="flex flex-row gap-[18px]">
                     <div className="size-[52px] rounded-full border border-[#00000014]" />
                     <div>
-                        <div className="flex gap-2 font-medium text-lg form-label-color mb-1">
+                        <div className="flex gap-2 items-center font-medium text-lg form-label-color mb-1">
                             <span>
                                 Afifa (Saudi Freelance Certified)
                             </span>
-                            <Status status="Active" type="SUCCESS" style="gap-[5px] rounded-md p-0" />
+                            <Status status="Active" type="SUCCESS" style="gap-[5px] rounded-md p-0 h-[22px]" />
                         </div>
                         <p className="font-normal text-base text-color2">Professional Html Developer</p>
                     </div>
@@ -150,19 +159,19 @@ function Profile() {
                     }
                 </div>
                 <div className="px-6 pt-[30px] pb-[38px] rounded-2xl bg-white mb-6">
-                    <Title name="Work Experience" icon={plusIcon} />
+                    <Title name="Work Experience" icon={plusIcon} onClick={() => { setShowAddExperienceModal({ edit: false, show: true }) }} />
 
-                    <Experience univercity="Softking" designation="PHP Laravel Developer" location="Uttara Dhaka 1203" dateRange="Mar 20, 2023 - Mar 29, 2023" />
+                    <Experience univercity="Softking" designation="PHP Laravel Developer" location="Uttara Dhaka 1203" dateRange="Mar 20, 2023 - Mar 29, 2023" onEditClick={() => { setShowAddExperienceModal({ show: true, edit: true }) }} />
                 </div>
 
                 <div className="p-6 rounded-2xl bg-white mb-6">
-                    <Title name="Education" icon={plusIcon} />
+                    <Title name="Education" icon={plusIcon} onClick={() => { setShowEducationModal({ edit: false, show: true }) }} />
 
-                    <Education univercity="Dhaka International University" degree="BSC in CSE" branch="Computer Science and Engineering" dateRange="Mar 15, 2023 - Mar 23, 2023" />
+                    <Education univercity="Dhaka International University" degree="BSC in CSE" branch="Computer Science and Engineering" dateRange="Mar 15, 2023 - Mar 23, 2023" onEditClick={() => { setShowEducationModal({ show: true, edit: true }) }} />
                 </div>
 
                 <div className="p-6 rounded-2xl bg-white">
-                    <Title name="Skills" icon={pencilLineIcon} />
+                    <Title name="Skills" icon={pencilLineIcon} onClick={() => setShowAddUpdateSkillModal(true)} />
                     <div className="flex gap-3">
                         {
                             skills.map(skill => <div className="py-[10px] px-[14px] border border-borderSecondary rounded-lg">
@@ -183,32 +192,36 @@ function Profile() {
                 </div>
 
                 <div className="p-6 bg-white rounded-2xl">
-                    <Title name="Portfolio" icon={plusIcon} />
+                    <Title name="Portfolio" icon={plusIcon} onClick={() => { setShowPortfolioModal({ edit: false, show: true }) }} />
 
                     {
-                        portfolio.map(({ title, date }) => <PortfolioCard title={title} date={date} />)
+                        portfolio.map(({ title, date }) => <PortfolioCard title={title} date={date} onEditClick={() => { setShowPortfolioModal({ show: true, edit: true }) }} />)
                     }
                 </div>
             </div>
         </div>
 
-        {showPersonalInfoModal && <Modal title="Personal Information" onClose={() => setShowPersonalInfoModal(false)}> <PersonalInfoModal /> </Modal>}
+        {showPersonalInfoModal && <Modal title="Personal Information" style="w-[612px]" onClose={() => setShowPersonalInfoModal(false)}> <PersonalInfoModal /> </Modal>}
+        {showAddExperienceModal.show && <Modal title={showAddExperienceModal.edit ? "Edit work experience" : "Add work experience"} style="w-[612px]" onClose={() => setShowAddExperienceModal({ show: false, edit: false })}> <AddExperienceModal edit={showAddExperienceModal.edit} /> </Modal>}
+        {showEducationModal.show && <Modal title={showEducationModal.edit ? "Edit education" : "Add education"} style="w-[612px]" onClose={() => setShowEducationModal({ show: false, edit: false })}> <EducationModal edit={showEducationModal.edit} /> </Modal>}
+        {showPortfolioModal.show && <Modal title={showPortfolioModal.edit ? "Edit portfolio" : "Add portfolio"} style="w-[612px]" onClose={() => setShowPortfolioModal({ show: false, edit: false })}> <AddPortfolioModal edit={showPortfolioModal.edit} /> </Modal>}
+        {showAddUpdateSkillModal && <Modal title="Add/ Update skills" style="w-[612px]" onClose={() => setShowAddUpdateSkillModal(false)}> <AddUpdateSkillModal /> </Modal>}
     </div>
 }
 
 export default Profile
 
-function Title({ name, icon }) {
+function Title({ name, icon, onClick }) {
     return <div className="flex justify-between mb-[10px]">
         <span className="font-medium text-lg text-primaryText">{name}</span>
-        <CRUD icon={icon} />
+        <CRUD icon={icon} onClick={onClick} />
     </div>
 }
 
-function CRUD({ icon }) {
-    return <div className="size-10 flex justify-center items-center border border-borderSecondary rounded-lg">
+function CRUD({ icon, onClick }) {
+    return <button className="size-10 flex justify-center items-center border border-borderSecondary rounded-lg cursor-pointer" onClick={onClick}>
         <Image url={icon} />
-    </div>
+    </button>
 }
 function ProjectOverview({ description, price, delivery }) {
     return <div className="flex flex-row mb-6">
@@ -225,12 +238,12 @@ function ProjectOverview({ description, price, delivery }) {
     </div>
 }
 
-function Review({ name, description, price, date }) {
+function Review({ name, description, price, date, rating }) {
     return <div className="p-4 mb-6 border border-border3 rounded-xl">
         <p className="font-medium text-sm text-darkGreen mb-1">{name}</p>
         <p className="font-medium text-lg text-primaryText mb-4">{description}</p>
         <div className="mb-4">
-            aga
+            <Rating number={rating} />
         </div>
         <div className="flex items-center gap-[30px]">
             <div className="flex items-center gap-2">
@@ -245,15 +258,15 @@ function Review({ name, description, price, date }) {
     </div>
 }
 
-function PortfolioCard({ title, date }) {
+function PortfolioCard({ title, date, onEditClick, onDeleteClick }) {
     return <div >
         <div className="h-[207px] mb-5"></div>
         <div>
             <div className="flex justify-between">
                 <span className="font-medium text-lg text-primaryText">{title}</span>
                 <div className="flex gap-4">
-                    <CRUD icon={trashIco} />
-                    <CRUD icon={pencilLineIcon} />
+                    <CRUD icon={trashIco} onClick={onDeleteClick} />
+                    <CRUD icon={pencilLineIcon} onClick={onEditClick} />
                 </div>
             </div>
             <span className="font-medium text-base text-tertiary">{date}</span>
@@ -261,7 +274,7 @@ function PortfolioCard({ title, date }) {
     </div>
 }
 
-function Experience({ univercity, designation, location, dateRange }) {
+function Experience({ univercity, designation, location, dateRange, onEditClick, onDeleteClick }) {
     return <div className="p-4 bg-backgroundSec border border-border3 rounded-xl">
         <div className="flex justify-between mb-4">
             <div>
@@ -269,8 +282,8 @@ function Experience({ univercity, designation, location, dateRange }) {
                 <span className="font-medium text-lg text-primaryText">{designation}</span>
             </div>
             <div className="flex gap-4">
-                <CRUD icon={trashIco} />
-                <CRUD icon={pencilLineIcon} />
+                <CRUD icon={trashIco} onClick={onDeleteClick} />
+                <CRUD icon={pencilLineIcon} onClick={onEditClick} />
             </div>
         </div>
         <div className="flex items-center gap-4">
@@ -286,7 +299,7 @@ function Experience({ univercity, designation, location, dateRange }) {
     </div>
 }
 
-function Education({ univercity, degree, branch, dateRange }) {
+function Education({ univercity, degree, branch, dateRange, onEditClick, onDeleteClick }) {
     return <div className="p-4 bg-backgroundSec border border-border3 rounded-xl">
         <div className="flex justify-between mb-4">
             <div>
@@ -294,8 +307,8 @@ function Education({ univercity, degree, branch, dateRange }) {
                 <span className="font-medium text-lg text-primaryText">{degree}</span>
             </div>
             <div className="flex gap-4">
-                <CRUD icon={trashIco} />
-                <CRUD icon={pencilLineIcon} />
+                <CRUD icon={trashIco} onClick={onDeleteClick} />
+                <CRUD icon={pencilLineIcon} onClick={onEditClick} />
             </div>
         </div>
         <div className="flex items-center gap-4">

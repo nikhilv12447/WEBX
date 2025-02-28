@@ -7,8 +7,7 @@ export default {
                     id: "first-name",
                     label: "First Name",
                     key: "firstName",
-                    placeholder: "Enter First Name",
-                    style: "mt-[6px]",
+                    placeholder: "Enter First Name", 
                     defaultValue: "Ryan"
                 },
                 {
@@ -17,7 +16,6 @@ export default {
                     label: "Last Name",
                     key: "lastName",
                     placeholder: "Enter Last Name",
-                    style: "mt-[6px]",
                     defaultValue: "Wayne"
                 }
             ]
@@ -28,7 +26,6 @@ export default {
             label: "Your Email",
             key: "email",
             placeholder: "Enter Email",
-            style: "mt-[6px]",
             defaultValue: "riad@gmail.com"
         },
         {
@@ -36,7 +33,6 @@ export default {
             id: "country",
             label: "Your Country",
             placeholder: "Select Your Country",
-            style: "drop-down-style",
             key: "country",
             defaultValue: "Argentina",
             options: [
@@ -61,7 +57,6 @@ export default {
                     id: "state",
                     label: "Your State",
                     placeholder: "Select Your State",
-                    style: "drop-down-style",
                     key: "state",
                     defaultValue: "Buenos Aires",
                     options: [
@@ -84,7 +79,6 @@ export default {
                     id: "city",
                     label: "Your City",
                     placeholder: "Select Your City",
-                    style: "drop-down-style",
                     key: "city",
                     defaultValue: "Lende Pral",
                     options: [
@@ -110,7 +104,6 @@ export default {
             label: "Your Experience Level",
             key: "experience",
             placeholder: "Enter Your Experience Level",
-            style: "mt-[6px]",
             defaultValue: "Junior"
         },
     ]

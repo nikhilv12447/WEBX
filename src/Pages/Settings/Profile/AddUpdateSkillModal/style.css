@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .skill-type-btn {
+        @apply border border-borderSecondary rounded-lg;
+    }
+
+    .suggested-skill {
+        @apply font-medium text-base text-primaryText;
+    }
+
+    .suggestSkillContainer {
+        @apply flex items-center justify-between py-[10px] pr-[10px] pl-2;
+    }
+}

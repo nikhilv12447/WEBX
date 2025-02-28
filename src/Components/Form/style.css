@@ -3,5 +3,18 @@
 @tailwind utilities;
 
 @layer components {
-    
+    .form-input-style {
+        @apply mt-[6px];
+    }
+
+    .form-dropdown-style {
+        @apply !rounded-[28px] text-primaryText mt-[6px];
+    }
+    .form-dropdown-style input {
+        @apply text-primaryText;
+    }
+
+    .form-text-area-style {
+        @apply h-[118px]
+    }
 }

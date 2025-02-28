@@ -10,8 +10,4 @@
     .feedback-btn span {
         @apply text-[#004B23] font-medium;
     }
-
-    .drop-down-style input {
-        @apply text-[var(--text-color)];
-    }
 }

@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .input-date-style {
+        @apply outline-none w-full absolute top-0 -left-[2px] text-3xl opacity-0;
+    }
+
+    .input-container {
+        @apply py-[10px] px-[14px] border border-[#D0D5DD] bg-white rounded-[28px] relative overflow-hidden;
+    }
+
+    .input-date-style::-webkit-calendar-picker-indicator {
+        @apply bg-transparent bottom-0 text-transparent cursor-pointer h-auto left-0 absolute right-0 top-0 w-auto;
+    }
+}
