@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .main-video-card .video-thumbnil {
+        @apply h-[404px]
+    }
+
+    .video-list {
+        mask-image: linear-gradient(to bottom, black calc(100% - 99px), transparent 100%);
+    }
+}

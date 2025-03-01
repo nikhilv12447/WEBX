@@ -7,7 +7,7 @@ function Button({ title, Icon, active, isHover = true, secondaryBtn = false, sty
     return <div className={secondaryBtn ? `sec-inactive-button-bg ${containerStyle}` : containerStyle}>
         <button type={type} className={active || (isHover && activeState) ? `primary-btn primary-btn-active ${style} ${activeStyle}` : `primary-btn ${style} ${deactiveStyle}`} onClick={onClick} onMouseEnter={() => isHover && setActiveState(true)} onMouseLeave={() => isHover && setActiveState(false)}>
             {Icon && <Icon dark={!(active || (isHover && activeState))} />}
-            <span>{title}</span>
+            {title && <span>{title}</span>}
         </button>
     </div>
 }

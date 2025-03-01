@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .input-search {
+        @apply outline-none bg-transparent;
+    }
+
+    .input-search::placeholder {
+        @apply font-stolzl text-[#627882CC];
+    }
+
+    .select-user-type {
+        @apply bg-transparent text-[#004B23] appearance-none outline-none;
+    }
+
+    .select-user-type:focus+.dropdown-icon {
+        @apply rotate-180;
+    }
+
+    .toggle-btn-style {
+        @apply mx-auto bg-white font-stolzl;
+    }
+
+    .toggle-btn-style div {
+        @apply px-4;
+    }
+
+    .client-bg {
+        background: url("./icons/client.png") no-repeat;
+    }
+}

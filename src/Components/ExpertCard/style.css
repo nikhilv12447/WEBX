@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .user-icon {
+        @apply size-24 mx-auto shadow-[0_4px_6px_-2px_#10182808] rounded-full bg-[#E0E0E0];
+    }
+
+    .frame{
+        @apply bg-contain bg-no-repeat bg-center bg-[image:var(--user-icon)];
+    }
+}

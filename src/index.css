@@ -12,8 +12,14 @@
 }
 
 @layer components {
-  body {
-    @apply overflow-hidden;
+  @font-face {
+    font-family: mikado;
+    src: url(../MikadoBold_DEMO.otf);
+  }
+
+  @font-face {
+    font-family: stolzl;
+    src: url(../stolzl_book.otf);
   }
 
   .text-primary-color {
@@ -42,5 +48,78 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
+  }
+
+  .normal-24 {
+    @apply font-normal text-2xl;
+  }
+
+  .normal-20 {
+    @apply font-normal text-xl;
+  }
+
+  .normal-18 {
+    @apply font-normal text-lg;
+  }
+
+  .normal-16 {
+    @apply font-normal text-base;
+  }
+
+  .normal-14 {
+    @apply font-normal text-sm;
+  }
+
+  .normal-12 {
+    @apply font-normal text-xs;
+  }
+
+  .medium-28 {
+    @apply font-medium text-[28px]/[34px];
+  }
+
+  .medium-24 {
+    @apply font-medium text-2xl;
+  }
+
+  .medium-20 {
+    @apply font-medium text-xl;
+  }
+
+  .medium-18 {
+    @apply font-medium text-lg;
+  }
+
+  .medium-16 {
+    @apply font-medium text-base;
+  }
+
+  .medium-14 {
+    @apply font-medium text-sm;
+  }
+
+  .medium-12 {
+    @apply font-medium text-xs;
+  }
+
+  .text-gradent {
+    background: linear-gradient(94.11deg, #70E000 4.14%, #008000 98.8%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradent2 {
+    background: linear-gradient(96.07deg, #70E000 -19.73%, #008000 59.13%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .block-ellipsis {
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

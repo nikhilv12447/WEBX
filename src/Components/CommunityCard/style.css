@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .community-image {
+        @apply h-[201px] bg-cover rounded-tl-[19px] rounded-tr-[19px] bg-no-repeat bg-center bg-[image:var(--community-img)];
+    }
+}

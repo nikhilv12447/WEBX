@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .comm-card-style {
+        @apply !w-[420px];
+    }
+
+    .comm-card-style .community-image{
+        @apply h-[236px];
+    }
+
+    .comm-card-style p {
+        @apply h-[40px] block line-clamp-2 overflow-hidden text-ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
+    .active-pagination-btn {
+        @apply rounded-[11px] px-[20px] py-[10px] shadow-[0_5px_10px_0_#62B65566];
+        background-image: linear-gradient(94.11deg, #70E000 4.14%, #008000 98.8%);
+    }
+
+    .override-tab-style {
+        @apply shadow-[0_5px_8px_0_#161D2414] w-fit rounded-[13px] p-[5px] mx-auto;
+    }
+
+    .override-tab-style .tab-override-inactive-style {
+        @apply font-semibold  text-[#111111]
+    }
+    .override-tab-style .tab-override-active-style {
+        @apply font-semibold rounded-[11px]
+    }
+}

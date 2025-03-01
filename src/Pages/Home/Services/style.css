@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .active-card {
+        @apply shadow-[0_10px_39px_0_#70E00059] border border-[#004B234D] p-6 text-left rounded-2xl;
+        background-image: linear-gradient(92.9deg, #088C8E 1.06%, #9CF01E 165.91%);
+    }
+
+    .active-card title {
+        @apply text-white font-stolzl;
+    }
+
+    .active-card p {
+        @apply text-[#FFFFFFCC];
+    }
+
+    .inactive-card {
+        @apply bg-white border border-[#0023334D] p-6 text-left rounded-2xl;
+    }
+
+    .inactive-card title {
+        @apply text-[#002333] font-stolzl;
+    }
+
+    .inactive-card p {
+        @apply text-[#002333CC];
+    }
+}

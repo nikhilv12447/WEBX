@@ -36,6 +36,18 @@ module.exports = {
       margin: {
         mainTop: "72px",
         mainLeft: "268px"
+      },
+      backgroundImage: {
+        mainGradent: "linear-gradient(99.94deg, #068A90 75.84%, #9FF21C 121.17%)",
+        secondaryGradent: "linear-gradient(92.9deg, #088C8E 1.06%, #9CF01E 165.91%)",
+        gradent3: "linear-gradient(104.14deg, #068A90 45.89%, #9FF21C 155.66%)"
+      },
+      fontFamily: {
+        mikado: "mikado",
+        stolzl: "stolzl"
+      },
+      boxShadow: {
+        mainShadow: "0 0 39px 0 #70E00059"
       }
     },
   },

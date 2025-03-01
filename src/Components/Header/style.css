@@ -4,6 +4,10 @@
 
 @layer components {
     .list-item{
-        @apply px-[13px] py-[8px] cursor-pointer font-normal text-[#222222]
+        @apply font-stolzl px-[13px] py-[8px] cursor-pointer font-normal text-base text-[#002333];
+    }
+
+    .home-header{
+        @apply px-[100px] py-[15px] flex justify-between items-center;
     }
 }
