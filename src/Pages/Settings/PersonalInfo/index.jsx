@@ -10,9 +10,9 @@ const data = {
     firstName: "Ryan",
     lastName: "Wayne",
     email: "riad@gmail.com",
-    country: "argentina",
-    state: "buenos-aires",
-    city: "lende-pral",
+    country: "11",
+    state: "3656",
+    city: "682",
     experience: "Junior"
 }
 

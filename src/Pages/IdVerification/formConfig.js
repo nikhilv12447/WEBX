@@ -1,56 +1,26 @@
 export default [
     {
-        type: "DROP_DOWN",
+        type: "COUNTRY",
         id: "country",
         label: "ID Issuing Country",
         placeholder: "Select Country",
-        key: "country",
-        options: [
-            {
-                value: "india",
-                text: "India"
-            },
-            {
-                value: "aus",
-                text: "Australia"
-            }
-        ]
+        key: "country"
     },
     {
         fields: [
             {
-                type: "DROP_DOWN",
+                type: "STATE",
                 id: "state",
                 label: "State",
                 placeholder: "Select State",
-                key: "state",
-                options: [
-                    {
-                        value: "rajasthan",
-                        text: "Rajasthan"
-                    },
-                    {
-                        value: "maharashtra",
-                        text: "Maharashtra"
-                    }
-                ]
+                key: "state"
             },
             {
-                type: "DROP_DOWN",
+                type: "CITY",
                 id: "city",
                 label: "City (Optional)",
                 placeholder: "Select City",
-                key: "city",
-                options: [
-                    {
-                        value: "kota",
-                        text: "Kota"
-                    },
-                    {
-                        value: "jaipur",
-                        text: "Jaipur"
-                    }
-                ]
+                key: "city"
             }
         ]
     },

@@ -8,7 +8,7 @@ function Skills() {
 
     return <div className="py-[60px] px-[100px] relative">
         <Image url={gear} style="absolute right-0 -top-[270px] -z-[1]" />
-        <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[50px]">Learn in-Demand skills <br /> with <span className="text-gradent">Ethneen</span></p>
+        <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[50px] text-center">Learn in-Demand skills <br /> with <span className="text-gradent">Ethneen</span></p>
 
         <div className="flex gap-[50px] h-[600px]">
             <div className="basis-1/2">

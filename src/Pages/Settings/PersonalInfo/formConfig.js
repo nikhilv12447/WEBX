@@ -28,72 +28,28 @@ export default [
         defaultValue: ""
     },
     {
-        type: "DROP_DOWN",
+        type: "COUNTRY",
         id: "country",
         label: "Your Country",
         placeholder: "Select Your Country",
-        key: "country",
-        defaultValue: "",
-        options: [
-            {
-                value: "india",
-                text: "India"
-            },
-            {
-                value: "aus",
-                text: "Australia"
-            },
-            {
-                value: "argentina",
-                text: "Argentina"
-            }
-        ]
+        key: "country"
     },
     {
         fields: [
             {
-                type: "DROP_DOWN",
+                type: "STATE",
                 id: "state",
                 label: "Your State",
                 placeholder: "Select Your State",
-                key: "state",
-                defaultValue: "",
-                options: [
-                    {
-                        value: "rajasthan",
-                        text: "Rajasthan"
-                    },
-                    {
-                        value: "maharashtra",
-                        text: "Maharashtra"
-                    },
-                    {
-                        value: "buenos-aires",
-                        text: "Buenos Aires"
-                    }
-                ]
+                key: "state"
             },
             {
-                type: "DROP_DOWN",
+                type: "CITY",
                 id: "city",
                 label: "Your City",
                 placeholder: "Select Your City",
                 key: "city",
-                defaultValue: "",
-                options: [
-                    {
-                        value: "kota",
-                        text: "Kota"
-                    },
-                    {
-                        value: "jaipur",
-                        text: "Jaipur"
-                    },
-                    {
-                        value: "lende-pral",
-                        text: "Lende Pral"
-                    }
-                ]
+                defaultValue: ""
             }
         ]
     },

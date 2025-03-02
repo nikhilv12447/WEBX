@@ -1,11 +1,12 @@
 import "./style.css"
 import Image from "../Image"
 import downArrowIcon from "./icon/Icon.svg"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 function getValueByKey(options, value) {
-    let option = options.find(option => option.value === value)
+    if (!value) return ""
 
+    let option = options.find(option => option.value === value)
     return option ? option.text : ""
 }
 
@@ -13,6 +14,10 @@ function DropDown({ options = [], onSelect, placeHolder, defaultValue, style }) 
     const [queryStr, setQueryStr] = useState(getValueByKey(options, defaultValue))
     const [showDropdown, setShowDropdown] = useState(false)
     const inputRef = useRef()
+
+    useEffect(() => {
+        setQueryStr(getValueByKey(options, defaultValue))
+    }, [options])
 
     function handleOnClick(e) {
         const value = e.target.getAttribute("data-value")
@@ -53,9 +58,9 @@ function DropDown({ options = [], onSelect, placeHolder, defaultValue, style }) 
         </div>
 
         {
-            showDropdown && <div className="absolute top-12 h-24 overflow-y-auto w-full z-[2] bg-white" onClick={handleOnClick}>
+            showDropdown && <div className="absolute top-12 max-h-52 overflow-y-auto w-full z-[2] bg-white border border-borderSecondary rounded-lg shadow-[0_0_4px_0_#00000080]" onClick={handleOnClick}>
                 {
-                    filterOptions(queryStr, options).map(({ value, text }, index) => <div key={index} className="p-2 cursor-pointer" data-value={value} data-text={text}>{text}</div>)
+                    filterOptions(queryStr, options).map(({ value, text }, index) => <div key={index} className="p-2 cursor-pointer border-b border-borderSecondary" data-value={value} data-text={text}>{text}</div>)
                 }
             </div>
         }

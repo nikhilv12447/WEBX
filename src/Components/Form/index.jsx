@@ -7,8 +7,13 @@ import TextArea from "../TextArea"
 import Image from "../Image"
 import starsIcon from "./icons/stars-02.svg"
 import InputDate from "../InputDate"
+import CountryDropdown from "../CountryDropdown"
+import StateDropdown from "../StateDropdown"
+import CityDropdown from "../CityDropdown"
 
+let countryKey = "", stateKey = "", cityKey = "";
 function getForm(formConfig = [], formData, setFormData, isInLine) {
+
     return <div className={isInLine ? "flex justify-between gap-5 mb-5" : ""}>
         {
             formConfig.map((field) => {
@@ -50,6 +55,24 @@ function getForm(formConfig = [], formData, setFormData, isInLine) {
                             <label className="font-medium text-sm form-label-color" htmlFor={id}>{label}</label>
                             <InputDate style="form-input-style" id={id} placeholder={placeholder} handleOnChange={e => setFormData({ ...formData, [key]: e.target.value })} value={formData.hasOwnProperty(key) ? formData[key] : defaultValue} info={info} />
                         </div>
+                    case "COUNTRY":
+                        countryKey = key;
+                        return <div className={isInLine ? "w-full" : "mb-5 w-full"}>
+                            <label className="font-medium text-sm form-label-color" htmlFor={id}>{label}</label>
+                            <CountryDropdown placeHolder={placeholder} style="form-dropdown-style" onSelect={(value, text) => { setFormData({ ...formData, [key]: value, [stateKey]: "", [cityKey]: "" }) }} defaultValue={formData.hasOwnProperty(key) ? formData[key] : defaultValue} />
+                        </div>
+                    case "STATE":
+                        stateKey = key;
+                        return <div className={isInLine ? "w-full" : "mb-5 w-full"}>
+                            <label className="font-medium text-sm form-label-color" htmlFor={id}>{label}</label>
+                            <StateDropdown placeHolder={placeholder} style="form-dropdown-style" onSelect={(value, text) => setFormData({ ...formData, [key]: value, [cityKey]: "" })} defaultValue={formData.hasOwnProperty(key) ? formData[key] : defaultValue} countryId={formData[countryKey]} />
+                        </div>
+                    case "CITY":
+                        cityKey = key
+                        return <div className={isInLine ? "w-full" : "mb-5 w-full"}>
+                            <label className="font-medium text-sm form-label-color" htmlFor={id}>{label}</label>
+                            <CityDropdown placeHolder={placeholder} style="form-dropdown-style" onSelect={(value, text) => setFormData({ ...formData, [key]: value })} defaultValue={formData.hasOwnProperty(key) ? formData[key] : defaultValue} countryId={formData[countryKey]} stateId={formData[stateKey]} />
+                        </div>
                 }
             })
         }
@@ -57,7 +80,7 @@ function getForm(formConfig = [], formData, setFormData, isInLine) {
 }
 function Form({ formConfig = [], data = {}, onFormChange }) {
     const [formData, setFormData] = useState(data)
-
+    console.log(formData)
     useEffect(() => {
         onFormChange && onFormChange(formData)
     }, [formData])

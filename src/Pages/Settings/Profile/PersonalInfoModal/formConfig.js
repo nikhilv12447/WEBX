@@ -34,46 +34,18 @@ export default [
     {
         fields: [
             {
-                type: "DROP_DOWN",
+                type: "COUNTRY",
                 id: "country",
                 label: "Your Country",
                 placeholder: "Select Your Country",
-                key: "country",
-                options: [
-                    {
-                        value: "india",
-                        text: "India"
-                    },
-                    {
-                        value: "aus",
-                        text: "Australia"
-                    },
-                    {
-                        value: "lende-pral",
-                        text: "Lende Pral"
-                    }
-                ]
+                key: "country"
             },
             {
-                type: "DROP_DOWN",
+                type: "STATE",
                 id: "state",
                 label: "Your State",
                 placeholder: "Select Your State",
-                key: "state",
-                options: [
-                    {
-                        value: "rajasthan",
-                        text: "Rajasthan"
-                    },
-                    {
-                        value: "maharashtra",
-                        text: "Maharashtra"
-                    },
-                    {
-                        value: "buenos-aires",
-                        text: "Buenos Aires"
-                    }
-                ]
+                key: "state"
             }
         ]
     }
@@ -84,6 +56,6 @@ export const data = {
     lastName: "Wayne",
     professionalTitle: "Professional HTML Developer",
     myInfo: "Yes, I am familiar with Bill Gates. Bill Gates is a renowned American business magnate, software developer, philanthropist, and author. He co-founded Microsoft Corporation in 1975 with his childhood friend Paul Allen.",
-    country: "lende-pral",
-    state: "buenos-aires"
+    country: "11",
+    state: "3656"
 }

@@ -3,19 +3,11 @@
 @tailwind utilities;
 
 @layer components {
-    .dot {
-        @apply size-[6px] rounded-full;
+    .select-user-type {
+        @apply bg-transparent text-[#004B23] appearance-none outline-none text-right;
     }
 
-    .red {
-        @apply bg-red-800;
-    }
-
-    .green {
-        @apply bg-[#17B26A];
-    }
-
-    .yellow {
-        @apply bg-yellow-500;
+    .select-user-type:focus+.dropdown-icon {
+        @apply rotate-180;
     }
 }

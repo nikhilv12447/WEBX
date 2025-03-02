@@ -4,9 +4,9 @@ import DollarIcon from "./icons/DollarIcon"
 import LocationIcon from "./icons/Location"
 import verifiedTick from "./icons/Verified tick.svg"
 
-function ExpertCard({ name, description, country, state, price, userIcon, active = false, style }) {
+function ExpertCard({ name, description, country, state, price, userIcon, active = false, style, onClick }) {
 
-    return <div className={`border border-[#004B234D] rounded-2xl px-6 pb-6 pt-[74px] relative ${style} ${active ? "bg-secondaryGradent shadow-mainShadow" : "bg-white"}`}>
+    return <div className={`border border-[#004B234D] rounded-2xl px-6 pb-6 pt-[74px] relative cursor-pointer ${style} ${active ? "bg-secondaryGradent shadow-mainShadow" : "bg-white"}`} onClick={onClick}>
         <div className="absolute left-0 right-0 mx-auto -top-12">
             <div className="user-icon relative" style={{ "--user-icon": `url(${userIcon})` }}>
                 <div className="size-24 absolute border-4 border-white rounded-full frame" />

@@ -60,11 +60,11 @@ const singleTabData = [
 ]
 const tabData = {
     "All": <Grid data={singleTabData}/>,
-    "Company News": <Grid data={singleTabData}/>,
-    "Product & Innovation": <Grid data={singleTabData}/>,
-    "People & Culture": <Grid data={singleTabData}/>,
-    "Social Impact": <Grid data={singleTabData}/>,
-    "Research & Reports": <Grid data={singleTabData}/>,
+    "Company News": <Grid data={singleTabData.slice(0, 5)}/>,
+    "Product & Innovation": <Grid data={singleTabData.slice(0, 3)}/>,
+    "People & Culture": <Grid data={singleTabData.slice(0, 4)}/>,
+    "Social Impact": <Grid data={singleTabData.slice(0, 2)}/>,
+    "Research & Reports": <Grid data={singleTabData.slice(0, 4)}/>,
 }
 
 function Grid({ data }) {
@@ -85,7 +85,7 @@ function FirstFold() {
             <Image url={ethneeIcon} style="absolute w-[217px] right-[98px] -bottom-[62px]" />
         </div>
         <div className="py-[60px]">
-            <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[50px]">Latest <span className="text-gradent">Topics</span></p>
+            <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[50px] text-center">Latest <span className="text-gradent">Topics</span></p>
             <div className="flex gap-5 mb-[50px] justify-center">
                 {
                     data.map(({ desription, imageUrl, title }, index) => <CommunityCard key={index} desription={desription} imageUrl={imageUrl} title={title} style="comm-card-style" btnText="View Discussions" />)
@@ -94,7 +94,7 @@ function FirstFold() {
         </div>
 
         <div className="py-[60px] bg-secondaryGradent">
-            <span className="block font-stolzl font-medium text-[56px]/[67px] text-white -tracking-[3px] mb-[50px]">Upcoming Events</span>
+            <span className="block font-stolzl font-medium text-[56px]/[67px] text-white -tracking-[3px] mb-[50px] text-center">Upcoming Events</span>
 
             <div className="flex gap-5 mb-[50px] justify-center">
                 {
@@ -113,7 +113,7 @@ function FirstFold() {
         </div>
 
         <div className="py-[60px]">
-            <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[20px]">Browse by <span className="text-gradent">Categories</span></p>
+            <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[20px] text-center">Browse by <span className="text-gradent">Categories</span></p>
 
             <Tabs tabs={tabData} tabStyle="override-tab-style"/>
 

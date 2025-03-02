@@ -14,6 +14,7 @@ function SearchByKeyword({style}) {
             <div className="flex items-center gap-[5px]">
                 <select name="userType" className="select-user-type">
                     <option value="freelancer" selected>Freelancer</option>
+                    <option value="freelancer" selected>Client</option>
                 </select>
                 <Image url={dropdownIcon} style="dropdown-icon" />
             </div>

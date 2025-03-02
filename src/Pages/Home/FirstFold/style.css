@@ -11,14 +11,6 @@
         @apply font-stolzl text-[#627882CC];
     }
 
-    .select-user-type {
-        @apply bg-transparent text-[#004B23] appearance-none outline-none;
-    }
-
-    .select-user-type:focus+.dropdown-icon {
-        @apply rotate-180;
-    }
-
     .toggle-btn-style {
         @apply mx-auto bg-white font-stolzl;
     }
