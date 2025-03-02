@@ -13,7 +13,7 @@ import JoinClub from "./JoinClub"
 
 function Home() {
 
-    return <div className="">
+    return <div className="max-w-[1440px] mx-auto">
         <Header isHome />
         <div>
             <FirstFold />

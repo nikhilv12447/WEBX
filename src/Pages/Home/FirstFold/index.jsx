@@ -18,7 +18,7 @@ function FirstFold() {
         </div>
         <div className="pt-[60px] pb-[105px] relative bg-gradent3 text-center rounded-[48px]">
             <Image url={gearIcon} style="absolute top-0 left-0" />
-            <p className="font-stolzl font-medium text-[56px]/[50px] text-white -tracking-[3px] pb-5">Ethneen <br /> is your all-in-one service hub</p>
+            <p className="font-stolzl font-medium text-[56px]/[60px] text-white -tracking-[3px] pb-5 max-w-[996px] mx-auto">Ethneen <br /> is your all-in-one service hub</p>
             <p className="font-stolzl normal-20 text-[#FFFFFFCC] mb-8">Meeting the needs of both clients and freelancers</p>
             <ToggleButton toggleBetween={["I’m a client", "I’m a freelancer"]} style="toggle-btn-style normal-18 mb-8" />
             <div className={"w-fit mx-auto relative"}>

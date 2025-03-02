@@ -5,11 +5,10 @@ import FirstFold from "./FirstFold"
 
 function EthneenCommunity() {
 
-    return <div className="">
+    return <div className="max-w-[1440px] mx-auto">
         <Header isHome />
         <div>
             <FirstFold />
-            
         </div>
         <Footer />
     </div>
