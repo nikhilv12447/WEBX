@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./style.css"
-function ToggleButton({ toggleBetween = [], onToggle, style }) {
-    const [buttonState, setButtonState] = useState(0)
+function ToggleButton({ toggleBetween = [], onToggle, defaultValue = 0, style }) {
+    const [buttonState, setButtonState] = useState(defaultValue)
 
     function handleOnClick(event) {
         const state = parseInt(event.target.getAttribute("data-state"))

@@ -1,5 +1,4 @@
 import "./style.css"
-// import Button from "../../../Components/Button"
 import CommunityCard from "../../../Components/CommunityCard"
 import discover from "./icons/discover.png"
 import howToHire from "./icons/how-to-hire.png"

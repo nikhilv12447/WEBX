@@ -70,7 +70,7 @@ const tabData = {
 function Grid({ data }) {
     return <div className="grid grid-cols-3 gap-5">
         {data.map(({ title, desription, imageUrl }, index) => {
-            return <CommunityCard key={index} desription={desription} imageUrl={imageUrl} title={title} style="comm-card-style" btnText="View Discussions" />
+            return <CommunityCard key={index} desription={desription} imageUrl={imageUrl} title={title} style="comm-card-style mx-auto" btnText="View Discussions" />
         })}
     </div>
 }

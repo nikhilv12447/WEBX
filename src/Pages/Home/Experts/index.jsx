@@ -60,7 +60,7 @@ const tabs = {
 
 function Experts({ }) {
 
-    return <div className="pl-[100px] pb-[60px]">
+    return <div className="pl-[100px] py-[60px]">
         <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] pr-[100px] mb-5">Everything you could ask for <br /> at <span className="text-gradent">Ethneen</span> </p>
         <Tabs tabs={tabs} secContainerStyle="pt-16 pb-[68px]" tabStyle="pr-[100px]" />
     </div>

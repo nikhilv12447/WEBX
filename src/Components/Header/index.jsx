@@ -39,7 +39,7 @@ function Header({ isHome }) {
             </ul>
         </div>
         <div className="flex items-center">
-            <ToggleButton toggleBetween={["Client", "Freelancer"]} onToggle={(index, data) => { console.log(index, data) }} />
+            <ToggleButton toggleBetween={["Client", "Freelancer"]} defaultValue={1} onToggle={(index, data) => { console.log(index, data) }} />
             <div className="flex items-center">
                 <img className="px-[10px]" src={search} />
                 <img className="px-[10px]" src={chat} />
