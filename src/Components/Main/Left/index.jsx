@@ -5,12 +5,18 @@ import settingsIcon from "./icons/Settings"
 import lifeBuoy from "./icons/LifeBuoy"
 import ToggleButton from "../../Button/Toggle"
 import Logout from "./icons/LogOut"
-import { useNavigate, useParams, useLocation } from "react-router"
+import { useNavigate, useLocation } from "react-router"
+import { loginActions } from "../../../redux/actions"
 
 function LeftSection() {
     const nevigate = useNavigate()
-    const params = useParams()
     const { pathname } = useLocation();
+    const { setLogin } = loginActions
+
+    function handleLogOut() {
+        setLogin(false)
+        nevigate("/home")
+    }
 
     return <div className="flex flex-col fixed w-[268px] h-main mt-mainTop justify-between bg-white p-4 border-r border-[#E4E7EC] overflow-y-auto">
         <div className="h-full">
@@ -34,9 +40,9 @@ function LeftSection() {
                     <span>Afifa</span>
                     <span>afifa@ethneen.com</span>
                 </div>
-                <div className="cursor-pointer">
+                <button onClick={handleLogOut}>
                     <Logout dark />
-                </div>
+                </button>
             </div>
         </div>
     </div>

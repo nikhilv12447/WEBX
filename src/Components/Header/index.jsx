@@ -7,20 +7,35 @@ import notification from "./icons/notification.svg"
 import ToggleButton from "../Button/Toggle"
 import Image from "../Image"
 import Button from "../Button"
+import { loginActions } from "../../redux/actions"
+import { useNavigate } from "react-router"
 
 function Header({ isHome }) {
+    const nevigate = useNavigate()
 
     if (isHome) return <HomeHeader />
+
+    function handleOnLinkClick(e) {
+        const linkName = e.target.getAttribute("data-item")
+
+        switch (linkName) {
+            case "community":
+                nevigate("/community")
+                break;
+            default:
+                break;
+        }
+    }
 
     return <div className="border-b border-solid border-[#E4E7EC] flex items-center place-content-between px-[24px] h-[72px] fixed w-full top-0 bg-white">
         <div className="flex items-center">
             <img src={logo} />
-            <ul className="flex pl-[48px]">
-                <li className="list-item">Ethneen</li>
-                <li className="list-item">Top Talent</li>
-                <li className="list-item">Find Jobs</li>
-                <li className="list-item">Community</li>
-                <li className="list-item">Contact</li>
+            <ul className="flex pl-[48px]" onClick={handleOnLinkClick}>
+                <li className="list-item" data-item="Ethneen">Ethneen</li>
+                <li className="list-item" data-item="Top Talent">Top Talent</li>
+                <li className="list-item" data-item="Find Jobs">Find Jobs</li>
+                <li className="list-item" data-item="community">Community</li>
+                <li className="list-item" data-item="Contact">Contact</li>
             </ul>
         </div>
         <div className="flex items-center">
@@ -37,7 +52,13 @@ function Header({ isHome }) {
 }
 
 function HomeHeader() {
+    const { setLogin } = loginActions
+    const nevigate = useNavigate()
 
+    function handleSignIn() {
+        setLogin(true)
+        nevigate("/")
+    }
     return <div className="home-header">
         <Image url={logo} />
         <ul className="flex pl-[48px]">
@@ -48,7 +69,7 @@ function HomeHeader() {
             <li className="list-item">Contact</li>
         </ul>
         <div className="flex gap-[10px] items-center">
-            <Button title="Sign In" secondaryBtn isHover={false} />
+            <Button title="Sign In" secondaryBtn isHover={false} onClick={handleSignIn} />
             <Button title="Post A Task" active isHover={false} />
         </div>
     </div>

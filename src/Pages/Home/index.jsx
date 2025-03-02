@@ -13,7 +13,7 @@ import JoinClub from "./JoinClub"
 
 function Home() {
 
-    return <div className="mx-auto">
+    return <div className="">
         <Header isHome />
         <div>
             <FirstFold />
