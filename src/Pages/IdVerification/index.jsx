@@ -14,7 +14,6 @@ function IdVerification({ }) {
     const [formData, setFormData] = useState({})
     function onFormSubmit(e) {
         e.preventDefault()
-        console.log(formData)
     }
     return <div>
         <div className="id-verification-container mb-6">

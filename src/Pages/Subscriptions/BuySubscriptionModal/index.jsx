@@ -16,7 +16,7 @@ function BuySubscriptionModal({ onClose }) {
         </div>
         <div className="mb-6">
             <label className="block font-medium text-sm text-[#344054] mb-[6px]" htmlFor="bank">Payment Method</label>
-            <DropDown placeHolder="select-bank" onSelect={(value) => console.log(value)} options={data} />
+            <DropDown placeHolder="select-bank" onSelect={(value) => {}} options={data} />
         </div>
         <div className="flex gap-6">
             <Button title="close" style="modal-btn" secondaryBtn isHover={false} onClick={onClose} />
