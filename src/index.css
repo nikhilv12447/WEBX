@@ -22,6 +22,11 @@
     src: url(../stolzl_book.otf);
   }
 
+  @font-face {
+    font-family: twemoji;
+    src: url(../TwemojiMozilla.ttf);
+  }
+
   .text-primary-color {
     @apply text-[var(--text-color)];
   }

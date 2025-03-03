@@ -44,7 +44,8 @@ module.exports = {
       },
       fontFamily: {
         mikado: "mikado",
-        stolzl: "stolzl"
+        stolzl: "stolzl",
+        twemoji: "twemoji"
       },
       boxShadow: {
         mainShadow: "0 0 39px 0 #70E00059"

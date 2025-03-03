@@ -2,7 +2,7 @@ import "./style.css"
 import DropDown from "../DropDown"
 import countries from "./countries.json"
 
-const data = countries.map(({ id, name }) => ({ value: `${id}`, text: name }))
+const data = countries.map(({ id, name, emoji }) => ({ value: `${id}`, emoji, text: name }))
 
 function CountryDropdown({ style, defaultValue, placeHolder, onSelect }) {
 
