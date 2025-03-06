@@ -23,7 +23,7 @@
     }
 
     .override-tab-style {
-        @apply shadow-[0_5px_8px_0_#161D2414] w-fit rounded-[13px] p-[5px] mx-auto;
+        @apply shadow-[0_5px_8px_0_#161D2414] w-fit rounded-[13px] p-[5px] mx-auto max-mob:!grid grid-cols-3;
     }
 
     .override-tab-style .tab-override-inactive-style {

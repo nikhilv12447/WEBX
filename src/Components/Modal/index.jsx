@@ -3,7 +3,7 @@ import "./style.css"
 import Image from "../Image"
 import crossIcon from "./icon/x-close.svg"
 
-function Modal({ title, children, onClose, style }) {
+function Modal({ title, children, onClose, style, containerStyle }) {
     const [show, setShow] = useState(true)
 
     function handleClose() {
@@ -12,7 +12,7 @@ function Modal({ title, children, onClose, style }) {
     }
     if (!show) return null
 
-    return <div className=" flex justify-center items-center fixed top-0 left-0 w-full h-full bg-[#0C111DB3]">
+    return <div className={`flex z-[2] justify-center items-center fixed top-0 left-0 w-full h-full bg-[#0C111DB3] ${containerStyle}`}>
         <div className={`bg-white rounded-xl ${style}`}>
             <div className="flex justify-between pt-6 pb-5 px-6 rounded-xl border-b border-[#E4E7EC]">
                 <span className="font-medium text-lg text-primaryText">{title}</span>

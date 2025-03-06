@@ -81,17 +81,17 @@ function Services() {
     const [activeIndex, setActiveIndex] = useState(0)
 
     return <>
-        <div className="px-[100px] py-[60px]">
+        <div className="px-[100px] py-[60px] max-mob:px-6">
             <div className="text-center mb-8">
                 <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-5">Your <span className="text-gradent">One-Stop Online</span> Services for <br /> Everything You Need</p>
                 <p className="font-stolzl normal-16 text-[#002333] mb-5">Your premier online marketplace. Find quality products and services, connect <br /> with trusted sellers,and enjoy a seamless shopping experience today.</p>
                 <ToggleButton toggleBetween={["On-site Services", "Online Services", "All"]} style="normal-18 mx-auto" onToggle={(index, tabName) => setSelectedTab(tabName)} />
             </div>
             <div>
-                <div className="grid grid-cols-3 col-start gap-5">
+                <div className="grid grid-cols-3 col-start gap-5 max-mob:grid-cols-2">
                     {
                         data[selectedTab].map(({ icon, title, description }, index) => {
-                            return <ServiceCard key={index} icon={icon} title={title} description={description} style={index === 1 ? "col-start-2 col-end-4" : ""} active={index === activeIndex} onClick={() => setActiveIndex(index)} />
+                            return <ServiceCard key={index} icon={icon} title={title} description={description} style={index === 1 ? "col-start-2 col-end-4 max-mob:col-end-3" : ""} active={index === activeIndex} onClick={() => setActiveIndex(index)} />
                         })
                     }
 

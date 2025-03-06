@@ -127,8 +127,8 @@ function Profile() {
 
     return <div>
         <div className="bg-white p-6 rounded-2xl border border-[#0023334D] mb-6">
-            <div className="flex flex-row items-center justify-between pb-5 border-b border-[#E4E7EC] mb-5">
-                <div className="flex flex-row gap-[18px]">
+            <div className="flex flex-row items-center justify-between pb-5 border-b border-[#E4E7EC] mb-5 max-mob:block">
+                <div className="flex flex-row gap-[18px] max-mob:mb-6">
                     <div className="size-[52px] rounded-full border border-[#00000014]" />
                     <div>
                         <div className="flex gap-2 items-center font-medium text-lg form-label-color mb-1">
@@ -145,10 +145,10 @@ function Profile() {
                     <Button Icon={PencilLine} title="Edit Info" activeStyle="gap-1" active onClick={() => setShowPersonalInfoModal(true)} />
                 </div>
             </div>
-            <div className="font-normal text-base text-color2 w-[640px] mb-8">
+            <div className="font-normal text-base text-color2 max-w-[640px] mb-8">
                 <p>Yes, I am familiar with Bill Gates. Bill Gates is a renowned American business magnate, software developer, philanthropist, and author. He co-founded Microsoft Corporation in 1975 with his childhood friend Paul Allen.</p>
             </div>
-            <div className="flex py-[22px] px-6 bg-[#F9FAFB] border border-[#E4E7EC] rounded-xl w-[734px] mb-6">
+            <div className="flex py-[22px] px-6 bg-[#F9FAFB] border border-[#E4E7EC] rounded-xl max-w-[734px] mb-6 max-mob:grid grid-cols-2 gap-y-6">
                 <div className="w-full">
                     <p className="font-medium text-sm text-color2 mb-2">Work Availability</p>
                     <OnOff />
@@ -168,9 +168,9 @@ function Profile() {
             </div>
 
         </div>
-        <div className="flex gap-6">
-            <div className="basis-2/3">
-                <div className="flex py-[22px] px-6 bg-[#F9FAFB] border border-[#0023334D] rounded-xl w-[734px] mb-6 w-full">
+        <div className="flex gap-6 max-mob:block">
+            <div className="basis-2/3 mb-6">
+                <div className="flex py-[22px] px-6 bg-[#F9FAFB] border border-[#0023334D] rounded-xl max-w-[734px] mb-6 max-mob:grid grid-cols-2">
                     <div className="w-full">
                         <p className="font-medium text-base text-tertiary mb-2">Total Earned</p>
                         <span className="font-medium text-3xl text-darkGreen">$47.40</span>
@@ -307,7 +307,7 @@ function CRUD({ icon, onClick }) {
     </button>
 }
 function ProjectOverview({ description, price, delivery }) {
-    return <div className="flex flex-row mb-6">
+    return <div className="flex flex-row mb-6 max-mob:block">
         <div className="basis-1/2"></div>
         <div className="basis-1/2">
             <p className="font-medium text-lg text-black mb-2">{description}</p>

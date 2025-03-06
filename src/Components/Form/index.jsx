@@ -80,7 +80,7 @@ function getForm(formConfig = [], formData, setFormData, isInLine) {
 }
 function Form({ formConfig = [], data = {}, onFormChange }) {
     const [formData, setFormData] = useState(data)
-    console.log(formData)
+
     useEffect(() => {
         onFormChange && onFormChange(formData)
     }, [formData])

@@ -9,10 +9,10 @@ import mailIcon from "./icons/mail.svg"
 function Footer({ status, type, style }) {
 
     return <div className="footer-container">
-        <div className="px-[100px] pt-20 pb-[50px] flex justify-between text-left">
+        <div className="px-[100px] pt-20 pb-[50px] flex justify-between text-left max-tab:grid grid-cols-2 gap-x-60 gap-y-8 max-mob:grid-cols-1 max-tab:px-8 max-mob:px-4">
             <div>
                 <Image url={ethneenIcon} style="mb-6" />
-                <p className="normal-24 text-[#FFFFFFCC] mb-[85px] w-[443px]">Join the club of hundreds of local service professionals and freelancers working with Ethneen.</p>
+                <p className="normal-24 text-[#FFFFFFCC] mb-[85px] max-w-[443px]">Join the club of hundreds of local service professionals and freelancers working with Ethneen.</p>
                 <div className="flex gap-[19px]">
                     <Image url={playStoreIcon} />
                     <Image url={appleStoreIcon} />
@@ -44,7 +44,7 @@ function Footer({ status, type, style }) {
                 </div>
             </div>
         </div>
-        <div className="px-[100px] py-[30px] border-t border-white flex justify-between items-center">
+        <div className="px-[100px] py-[30px] border-t border-white flex justify-between items-center max-mob:px-4">
             <span className="normal-16 text-white">Copyright © All rights reserved. 2024</span>
             <span className="normal-16 text-white">Terms and Conditions | Privacy Policy | Content Privacy</span>
         </div>

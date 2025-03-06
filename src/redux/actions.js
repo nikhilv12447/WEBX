@@ -4,7 +4,7 @@ const dispatch = store.dispatch
 
 function wrapWithDispatch(actions = {}) {
     let res = {}
-    // console.log(actions)
+    
     for (let action in actions) {
         res[action] = (data) => dispatch(actions[action](data))
     }

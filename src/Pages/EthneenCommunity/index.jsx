@@ -5,7 +5,7 @@ import FirstFold from "./FirstFold"
 
 function EthneenCommunity() {
 
-    return <div className="max-w-[1440px] mx-auto">
+    return <div className="max-w-[1440px] mx-auto max-tab:w-full">
         <Header isHome />
         <div>
             <FirstFold />
