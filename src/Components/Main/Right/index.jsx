@@ -1,8 +1,8 @@
 import "./style.css"
 import { Outlet } from "react-router"
 
-function RightSection() {
-    return <div className="right-container fixed w-main h-main mt-mainTop ml-mainLeft overflow-y-scroll">
+function RightSection({ open }) {
+    return <div className={`right-container ${open ? "w-main" : "w-mainClose"} h-main overflow-y-scroll`}>
         <Outlet />
     </div>
 }

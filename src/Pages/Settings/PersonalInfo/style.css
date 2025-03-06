@@ -14,4 +14,8 @@
     .drop-down-style input {
         @apply text-[var(--text-color)];
     }
+
+    .edit-info-text-style span {
+        @apply max-xsmob:hidden
+    }
 }

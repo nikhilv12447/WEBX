@@ -5,8 +5,10 @@ import Header from "../Header"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router"
 import { useEffect } from "react"
+import { useState } from "react"
 
 function Main() {
+    const [open, setOpen] = useState(true)
     const isLogin = useSelector(({ login }) => login.isLogin)
     const nevigate = useNavigate()
 
@@ -20,8 +22,10 @@ function Main() {
 
     return <div>
         <Header />
-        <LeftSection />
-        <RightSection />
+        <div className="flex mt-mainTop">
+            <LeftSection open={open} onToggleOpen={setOpen} />
+            <RightSection open={open} />
+        </div>
     </div>
 }
 

@@ -32,9 +32,9 @@ function Community() {
         <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-5 text-center"><span className="text-gradent">Ethneen</span> Community</p>
         <p className="font-stolzl normal-16 text[#002333] mb-[50px] text-center">Stay Informed with the Latest Insights: Explore articles, news, and expert <br /> opinions on the future of work, freelancing trends, and business innovation</p>
 
-        <div className="flex gap-5 justify-center flex-nowrap overflow-x-auto">
+        <div className="flex gap-5 justify-center flex-nowrap overflow-x-auto max-mob:grid grid-cols-1">
             {
-                data.map(({ desription, imageUrl, title }, index) => <CommunityCard key={index} desription={desription} imageUrl={imageUrl} title={title} />)
+                data.map(({ desription, imageUrl, title }, index) => <CommunityCard key={index} desription={desription} imageUrl={imageUrl} title={title} style="mx-auto" />)
             }
         </div>
     </div>

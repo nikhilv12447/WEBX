@@ -22,6 +22,9 @@ module.exports = {
       keyframes: {
         btnOn: {
           "0%, 100%": { right: "0px" }
+        },
+        slider: {
+
         }
       },
       animation: {
@@ -31,7 +34,8 @@ module.exports = {
         main: "calc(100vh - 72px)"
       },
       width: {
-        main: "calc(100vw - 268px)"
+        main: "calc(100vw - 268px)",
+        mainClose: "calc(100vw - 90px)"
       },
       margin: {
         mainTop: "72px",
@@ -51,6 +55,11 @@ module.exports = {
         mainShadow: "0 0 39px 0 #70E00059"
       }
     },
+    screens: {
+      tab: "1382px",
+      mob: "820px",
+      xsmob: "550px"
+    }
   },
   plugins: [],
 }

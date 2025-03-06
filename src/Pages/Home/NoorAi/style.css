@@ -2,4 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {}
+@layer components {
+    .desktop-img {
+        @apply top-0 right-[164px]
+    }
+
+    .tab-img{
+        @apply w-[300px] bottom-0 right-0
+    }
+
+    .mob-img {
+        @apply w-[125px] bottom-[45px] right-0
+    }
+}

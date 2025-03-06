@@ -8,7 +8,7 @@ import Image from "../Image"
 function SearchByKeyword({style}) {
     const [query, setQuery] = useState("")
 
-    return <div className={`py-[10px] px-5 bg-[#EBEBEB] flex items-center justify-between w-[638px] rounded-full ${style}`}>
+    return <div className={`py-[10px] px-5 bg-[#EBEBEB] flex items-center justify-between max-w-[638px] rounded-full ${style}`}>
         <input className="input-search normal-14" type="text" onChange={e => setQuery(e.target.value)} value={query} placeholder="Search by keyword" />
         <div className="flex items-center gap-4">
             <div className="flex items-center gap-[5px]">

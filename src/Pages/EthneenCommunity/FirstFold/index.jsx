@@ -68,7 +68,7 @@ const tabData = {
 }
 
 function Grid({ data }) {
-    return <div className="grid grid-cols-3 gap-5">
+    return <div className="grid grid-cols-3 gap-5 max-tab:grid-cols-2 max-mob:grid-cols-1">
         {data.map(({ title, desription, imageUrl }, index) => {
             return <CommunityCard key={index} desription={desription} imageUrl={imageUrl} title={title} style="comm-card-style mx-auto" btnText="View Discussions" />
         })}
@@ -81,14 +81,14 @@ function FirstFold() {
             <h1 className="font-mikado font-bold text-[56px]/[75px] -tracking-[3px] text-[#002333]">Ethneen Community</h1>
             <p className="font-stolzl normal-16 text-[#627882CC] mx-auto max-w-[638px] mb-[30px]">Stay Informed with the Latest Insights: Explore articles, news, and expert opinions on the future of work, freelancing trends, and business innovation</p>
             <SearchByKeyword style="mx-auto" />
-            <Image url={ethneeIcon} style="absolute w-[146px] top-[57px] left-[181px]" />
-            <Image url={ethneeIcon} style="absolute w-[217px] right-[98px] -bottom-[62px]" />
+            <Image url={ethneeIcon} style="absolute w-[146px] top-[57px] left-[181px] max-tab:hidden" />
+            <Image url={ethneeIcon} style="absolute w-[217px] right-[98px] -bottom-[62px] max-tab:hidden" />
         </div>
         <div className="py-[60px]">
             <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[50px] text-center">Latest <span className="text-gradent">Topics</span></p>
-            <div className="flex gap-5 mb-[50px] justify-center">
+            <div className="flex gap-5 mb-[50px] justify-center max-mob:grid grid-cols-1">
                 {
-                    data.map(({ desription, imageUrl, title }, index) => <CommunityCard key={index} desription={desription} imageUrl={imageUrl} title={title} style="comm-card-style" btnText="View Discussions" />)
+                    data.map(({ desription, imageUrl, title }, index) => <CommunityCard key={index} desription={desription} imageUrl={imageUrl} title={title} style="comm-card-style mx-auto" btnText="View Discussions" />)
                 }
             </div>
         </div>
@@ -96,14 +96,14 @@ function FirstFold() {
         <div className="py-[60px] bg-secondaryGradent">
             <span className="block font-stolzl font-medium text-[56px]/[67px] text-white -tracking-[3px] mb-[50px] text-center">Upcoming Events</span>
 
-            <div className="flex gap-5 mb-[50px] justify-center">
+            <div className="flex gap-5 mb-[50px] justify-center max-mob:grid grid-cols-1">
                 {
                     data.map(({ desription, imageUrl, title }, index) => <CommunityCard
                         key={index}
                         desription={desription}
                         imageUrl={imageUrl}
                         title={title}
-                        style="comm-card-style"
+                        style="comm-card-style mx-auto"
                         btnText="Reserve Seat"
                         dateTime="25 JAN    •    18:00 CST"
                         isViewDiscussion

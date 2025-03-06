@@ -4,6 +4,7 @@
 
 @layer components {
     .active-tab {
+        @apply justify-center;
         background: linear-gradient(92.9deg, #088C8E 1.06%, #9CF01E 165.91%);
     }
 
