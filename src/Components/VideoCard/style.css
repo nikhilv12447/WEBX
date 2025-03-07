@@ -6,4 +6,20 @@
     .video-thumbnil {
         @apply rounded-[19px] border border-[#DFDFDF] bg-[#DFDFDF] flex items-center justify-center relative;
     }
+
+    .video-card-heading {
+        @apply font-stolzl font-semibold text-2xl text-[#002333] mb-[10px]
+    }
+
+    .mob-video-card-heading {
+        @apply text-lg
+    }
+
+    .video-card-subheading {
+        @apply font-stolzl text-[#00233380]
+    }
+
+    .mob-video-card-subheading{
+        @apply text-sm
+    }
 }

@@ -8,11 +8,27 @@
         @apply flex justify-between items-center p-[10px] max-w-[502px] mx-auto bg-[#EBEBEB] border border-[#F6F6F6] rounded-[89px];
     }
 
-    .email-submit input{
+    .email-submit input {
         @apply bg-transparent p-[10px] outline-none w-full;
     }
 
     .email-submit imput::placeholder {
         @apply font-stolzl font-normal text-sm text-[#627882];
+    }
+
+    .mob-email-submit{
+        @apply p-1
+    }
+
+    .mob-email-submit imput::placeholder{
+        @apply text-xs
+    }
+
+    .join-club-heading-style {
+        @apply font-stolzl -tracking-[3px] font-semibold text-[48px]/[57px] text-[#002333] mb-5;
+    }
+
+    .mob-join-club-heading-style {
+        @apply text-xl tracking-normal
     }
 }

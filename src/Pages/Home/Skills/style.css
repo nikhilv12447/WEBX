@@ -7,7 +7,25 @@
         @apply h-[404px]
     }
 
+    .mob-main-video-card .video-thumbnil{
+        @apply h-[202px]
+    }
+
     .video-list {
         mask-image: linear-gradient(to bottom, black calc(100% - 99px), transparent 100%);
+    }
+
+    .video-list-video-card{
+        @apply flex gap-4 mb-6;
+    }
+    .mob-video-list-video-card .video-thumbnil {
+        @apply h-[175px]
+    }
+    .skill-heading-style{
+        @apply font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[50px] text-center
+    }
+
+    .mob-skill-heading-style {
+        @apply text-2xl tracking-normal
     }
 }

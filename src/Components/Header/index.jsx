@@ -31,43 +31,45 @@ function Header({ isHome }) {
         }
     }
 
-    return <div className="border-b border-solid border-[#E4E7EC] flex items-center place-content-between px-[24px] h-[72px] fixed w-full top-0 bg-white">
-        <div className="flex items-center">
-            <img src={logo} />
-            <ul className="flex pl-[48px] max-tab:hidden" onClick={handleOnLinkClick}>
-                <li className="list-item" data-item="Ethneen">Ethneen</li>
-                <li className="list-item" data-item="Top Talent">Top Talent</li>
-                <li className="list-item" data-item="Find Jobs">Find Jobs</li>
-                <li className="list-item" data-item="community">Community</li>
-                <li className="list-item" data-item="Contact">Contact</li>
-            </ul>
-        </div>
-        <div className="flex items-center">
-            <ToggleButton toggleBetween={["Client", "Freelancer"]} defaultValue={1} onToggle={(index, data) => { }} style="max-mob:hidden" />
+    return <>
+        <div className="border-b border-solid border-[#E4E7EC] flex items-center place-content-between px-[24px] h-[72px] fixed w-full top-0 bg-white">
             <div className="flex items-center">
-                <img className="px-[10px]" src={search} />
-                <img className="px-[10px]" src={chat} />
-                <img className="px-[10px]" src={fav} />
-                <img className="px-[10px]" src={notification} />
+                <img src={logo} />
+                <ul className="flex pl-[48px] max-tab:hidden" onClick={handleOnLinkClick}>
+                    <li className="list-item" data-item="Ethneen">Ethneen</li>
+                    <li className="list-item" data-item="Top Talent">Top Talent</li>
+                    <li className="list-item" data-item="Find Jobs">Find Jobs</li>
+                    <li className="list-item" data-item="community">Community</li>
+                    <li className="list-item" data-item="Contact">Contact</li>
+                </ul>
             </div>
-            <div className="w-[40px] h-[40px] rounded-full border border-solid border-green-600 durat"></div>
-            <div className="hidden max-tab:block">
-                <Button Icon={HamburgerMenuIcon} containerStyle="hamburger-style" active={false} isHover={false} onClick={() => setShowSideMenu(true)} />
-                {
-                    showSideMenu && <Modal containerStyle="side-menu-style" style="h-full px-[13px] w-[248px] bg-white" onClose={() => setShowSideMenu(false)}>
-                        <ul className="" onClick={handleOnLinkClick}>
-                            <li className="list-item" data-item="Ethneen">Ethneen</li>
-                            <li className="list-item" data-item="Top Talent">Top Talent</li>
-                            <li className="list-item" data-item="Find Jobs">Find Jobs</li>
-                            <li className="list-item" data-item="community">Community</li>
-                            <li className="list-item" data-item="Contact">Contact</li>
-                        </ul>
-                        <ToggleButton toggleBetween={["Client", "Freelancer"]} defaultValue={1} onToggle={(index, data) => { }} style="mob:hidden" />
-                    </Modal>
-                }
+            <div className="flex items-center">
+                <ToggleButton toggleBetween={["Client", "Freelancer"]} defaultValue={1} onToggle={(index, data) => { }} style="max-mob:hidden" />
+                <div className="flex items-center">
+                    <img className="px-[10px]" src={search} />
+                    <img className="px-[10px]" src={chat} />
+                    <img className="px-[10px]" src={fav} />
+                    <img className="px-[10px]" src={notification} />
+                </div>
+                <div className="w-[40px] h-[40px] rounded-full border border-solid border-green-600 durat"></div>
+                <div className="hidden max-tab:block">
+                    <Button Icon={HamburgerMenuIcon} containerStyle="hamburger-style" active={false} isHover={false} onClick={() => setShowSideMenu(true)} />
+                </div>
             </div>
         </div>
-    </div>
+        {
+            showSideMenu && <Modal containerStyle="side-menu-style" style="h-full px-[13px] w-[248px] bg-white" onClose={() => setShowSideMenu(false)}>
+                <ul className="" onClick={handleOnLinkClick}>
+                    <li className="list-item" data-item="Ethneen">Ethneen</li>
+                    <li className="list-item" data-item="Top Talent">Top Talent</li>
+                    <li className="list-item" data-item="Find Jobs">Find Jobs</li>
+                    <li className="list-item" data-item="community">Community</li>
+                    <li className="list-item" data-item="Contact">Contact</li>
+                </ul>
+                <ToggleButton toggleBetween={["Client", "Freelancer"]} defaultValue={1} onToggle={(index, data) => { }} style="mob:hidden max-mob:hamburger-modal-toggle-style" />
+            </Modal>
+        }
+    </>
 }
 
 function HomeHeader({ showSideMenu, setShowSideMenu }) {
@@ -101,8 +103,8 @@ function HomeHeader({ showSideMenu, setShowSideMenu }) {
                             <li className="list-item">Find Projects</li>
                             <li className="list-item">Contact</li>
                         </ul>
-                        <Button title="Sign In" secondaryBtn isHover={false} onClick={handleSignIn} containerStyle="mob:hidden mb-2" style="justify-center"/>
-                        <Button title="Post A Task" active isHover={false} containerStyle="mob:hidden" style="justify-center"/>
+                        <Button title="Sign In" secondaryBtn isHover={false} onClick={handleSignIn} containerStyle="mob:hidden mb-2" style="justify-center" />
+                        <Button title="Post A Task" active isHover={false} containerStyle="mob:hidden" style="justify-center" />
                     </Modal>
                 }
             </div>

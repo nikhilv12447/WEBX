@@ -22,4 +22,40 @@
     .client-bg {
         background: url("./icons/client.png") no-repeat;
     }
+
+    .heading-style{
+        @apply text-[56px]/[75px] font-mikado font-bold  max-w-[638px] -tracking-[3px] text-[#002333];
+    }
+
+    .container-style{
+        @apply px-[100px] py-[60px] relative;
+    }
+
+    .mob-container-style{
+        @apply px-6 pb-0 pt-6;
+    }
+
+    .point-container-style{
+        @apply p-6 bg-white max-w-[321px] rounded-[19px] shadow-[0_9px_20px_0_#0000001A] text-left;
+    }
+
+    .mob-point-container-style{
+        @apply p-3 flex gap-3 items-center mx-auto;
+    }
+
+    .mob-point-container-style span {
+        @apply text-sm mt-0
+    }
+
+    .mob-heading-style{
+        @apply text-4xl mb-4;
+    }
+
+    .mob-phone-img-style {
+        @apply w-96 mt-5 mx-auto bottom-0;
+    }
+
+    .mob-toggle-btn-style .btn{
+        @apply text-xs
+    }
 }

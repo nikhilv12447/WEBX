@@ -140,7 +140,7 @@ function Profile() {
                         <p className="font-normal text-base text-color2">Professional Html Developer</p>
                     </div>
                 </div>
-                <div className="flex flex-row gap-3">
+                <div className="flex flex-row gap-3 max-mob:justify-center">
                     <Button Icon={EyeIcon} title="View as Client" style="feedback-btn gap-1" secondaryBtn isHover={false} />
                     <Button Icon={PencilLine} title="Edit Info" activeStyle="gap-1" active onClick={() => setShowPersonalInfoModal(true)} />
                 </div>
@@ -237,7 +237,7 @@ function Profile() {
 
                 <div className="p-6 rounded-2xl bg-white">
                     <Title name="Skills" icon={pencilLineIcon} onClick={() => setShowAddUpdateSkillModal(true)} />
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 max-mob:grid grid-cols-2">
                         {
                             skills.map((skill, index) => <div key={index} className="py-[10px] px-[14px] border border-borderSecondary rounded-lg">
                                 <span className="font-medium text-sm text-[#344054]">{skill}</span>

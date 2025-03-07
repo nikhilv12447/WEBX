@@ -4,6 +4,10 @@
 
 @layer components {
 
+    .dropdown-container-style {
+        @apply border border-[#D0D5DD] rounded-lg relative bg-white;
+    }
+
     .dropdown-input {
         @apply w-full outline-none text-primaryText;
     }

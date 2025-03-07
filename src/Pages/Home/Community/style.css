@@ -3,5 +3,11 @@
 @tailwind utilities;
 
 @layer components {
+    .comm-heading-style{
+        @apply font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-5 text-center; 
+    }
 
+    .mob-comm-heading-style{
+        @apply text-2xl tracking-normal;
+    }
 }

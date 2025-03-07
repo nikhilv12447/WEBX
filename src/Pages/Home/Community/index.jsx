@@ -28,9 +28,9 @@ const data = [
 ]
 function Community() {
 
-    return <div className="py-[60px]">
-        <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-5 text-center"><span className="text-gradent">Ethneen</span> Community</p>
-        <p className="font-stolzl normal-16 text[#002333] mb-[50px] text-center">Stay Informed with the Latest Insights: Explore articles, news, and expert <br /> opinions on the future of work, freelancing trends, and business innovation</p>
+    return <div className="py-[60px] max-mob:py-6">
+        <p className="comm-heading-style max-mob:mob-comm-heading-style"><span className="text-gradent">Ethneen</span> Community</p>
+        <p className="font-stolzl normal-16 text[#002333] mb-[50px] text-center max-mob:text-[10px]/[14px]">Stay Informed with the Latest Insights: Explore articles, news, and expert <br /> opinions on the future of work, freelancing trends, and business innovation</p>
 
         <div className="flex gap-5 justify-center flex-nowrap overflow-x-auto max-mob:grid grid-cols-1">
             {

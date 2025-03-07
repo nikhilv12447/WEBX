@@ -81,17 +81,17 @@ function Services() {
     const [activeIndex, setActiveIndex] = useState(0)
 
     return <>
-        <div className="px-[100px] py-[60px] max-mob:px-6">
+        <div className="serv-container-style max-mob:mob-serv-container-style">
             <div className="text-center mb-8">
-                <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-5">Your <span className="text-gradent">One-Stop Online</span> Services for <br /> Everything You Need</p>
-                <p className="font-stolzl normal-16 text-[#002333] mb-5">Your premier online marketplace. Find quality products and services, connect <br /> with trusted sellers,and enjoy a seamless shopping experience today.</p>
-                <ToggleButton toggleBetween={["On-site Services", "Online Services", "All"]} style="normal-18 mx-auto" onToggle={(index, tabName) => setSelectedTab(tabName)} />
+                <p className="serv-heading-style max-mob:mob-serv-heading-style">Your <span className="text-gradent">One-Stop Online</span> Services for <br /> Everything You Need</p>
+                <p className="font-stolzl normal-16 text-[#002333] mb-5 max-mob:text-[8px]/[12px]">Your premier online marketplace. Find quality products and services, connect <br /> with trusted sellers,and enjoy a seamless shopping experience today.</p>
+                <ToggleButton toggleBetween={["On-site Services", "Online Services", "All"]} style="normal-18 mx-auto max-mob:mob-serv-toggle-btn-style" onToggle={(index, tabName) => setSelectedTab(tabName)} />
             </div>
             <div>
-                <div className="grid grid-cols-3 col-start gap-5 max-mob:grid-cols-2">
+                <div className="grid grid-cols-3 col-start gap-5 max-mob:grid-cols-1">
                     {
                         data[selectedTab].map(({ icon, title, description }, index) => {
-                            return <ServiceCard key={index} icon={icon} title={title} description={description} style={index === 1 ? "col-start-2 col-end-4 max-mob:col-end-3" : ""} active={index === activeIndex} onClick={() => setActiveIndex(index)} />
+                            return <ServiceCard key={index} icon={icon} title={title} description={description} style={index === 1 ? "serv-card-container-style max-mob:mob-serv-card-container-style" : ""} active={index === activeIndex} onClick={() => setActiveIndex(index)} />
                         })
                     }
 
@@ -101,9 +101,9 @@ function Services() {
         </div>
         <div className="bg-secondaryGradent py-[60px] rounded-[48px] text-center">
             <div className="max-w-[766px] mx-auto">
-                <p className="font-stolzl -tracking-[3px] font-medium text-[56px]/[72px] text-[#FFFFFF] drop-shadow-primary [text-shadow:_0_4px_4px_#00000080] mb-5">Most Rigorously Screened Talent in the top 1%</p>
-                <p className="font-stolzl normal-16 text-[#FFFFFF] [text-shadow:_0_4px_4px_#00000080] mb-5">Within the top 1%, discover elite talent meticulously vetted to uphold the highest standards, ensuring excellence and unparalleled expertise.</p>
-                <Button title="Explore more Freelancers" deactiveStyle="bg-white font-stolzl text-[#002333]" containerStyle="w-fit rounded-[39px] normal-18 mx-auto shadow-[0_1px_2px_0_#1018280D]" isHover={false} secondaryBtn />
+                <p className="font-stolzl -tracking-[3px] font-medium text-[56px]/[72px] text-[#FFFFFF] drop-shadow-primary [text-shadow:_0_4px_4px_#00000080] mb-5 max-mob:text-4xl">Most Rigorously Screened Talent in the top 1%</p>
+                <p className="font-stolzl normal-16 text-[#FFFFFF] [text-shadow:_0_4px_4px_#00000080] mb-5 px-6 max-mob:text-[10px]">Within the top 1%, discover elite talent meticulously vetted to uphold the highest standards, ensuring excellence and unparalleled expertise.</p>
+                <Button title="Explore more Freelancers" deactiveStyle="bg-white font-stolzl text-[#002333] max-mob:text-sm" containerStyle="w-fit rounded-[39px] normal-18 mx-auto shadow-[0_1px_2px_0_#1018280D]" isHover={false} secondaryBtn />
             </div>
         </div>
     </>

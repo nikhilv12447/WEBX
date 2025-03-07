@@ -12,6 +12,14 @@
     }
 
     .mob-img {
-        @apply w-[125px] bottom-[45px] right-0
+        @apply w-[90px] bottom-0 right-0
+    }
+
+    .ai-heading-style{
+        @apply font-stolzl -tracking-[3px] font-semibold text-[56px]/[67px] text-white mb-5
+    }
+
+    .mob-ai-heading-style{
+        @apply text-4xl tracking-normal
     }
 }

@@ -13,7 +13,7 @@ function Tabs({ tabs, containerStyle, tabStyle, secContainerStyle }) {
                     title={tab}
                     active={tab === activeTab}
                     onClick={() => setActiveTab(tab)}
-                    style="normal-18 text-[#00233380]"
+                    style="normal-18 text-[#00233380] justify-center"
                     activeStyle="normal-18 text-[#FFFFFF] shadow-[0_10px_24px_0_#70E0003D] tab-override-active-style"
                     deactiveStyle="tab-override-inactive-style"
                     isHover={false}

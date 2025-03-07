@@ -8,7 +8,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 
 function Main() {
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
     const isLogin = useSelector(({ login }) => login.isLogin)
     const nevigate = useNavigate()
 
@@ -24,7 +24,7 @@ function Main() {
         <Header />
         <div className="flex mt-mainTop">
             <LeftSection open={open} onToggleOpen={setOpen} />
-            <RightSection open={open} />
+            <RightSection open={open} onToggleOpen={setOpen} />
         </div>
     </div>
 }

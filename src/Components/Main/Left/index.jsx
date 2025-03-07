@@ -5,10 +5,9 @@ import settingsIcon from "./icons/Settings"
 import lifeBuoy from "./icons/LifeBuoy"
 import ToggleButton from "../../Button/Toggle"
 import Logout from "./icons/LogOut"
-import Image from "../../Image"
-import arrowIcon from "./icons/Icon.svg"
 import { useNavigate, useLocation } from "react-router"
 import { loginActions } from "../../../redux/actions"
+import isMobile from "is-mobile"
 
 function LeftSection({ open, onToggleOpen }) {
     const nevigate = useNavigate()
@@ -20,25 +19,25 @@ function LeftSection({ open, onToggleOpen }) {
         nevigate("/home")
     }
 
-    return <div className={`flex flex-col box-border ${open ? "w-[268px]" : "w-[90px]"} h-main justify-between bg-white p-4 border-r border-border3 overflow-y-auto`}>
-        <div className="w-full flex justify-end">
-            <button onClick={() => onToggleOpen(!open)} className="-mr-4">
-                <Image url={arrowIcon} style={`${open ? "rotate-90 rounded-b-full" : "-rotate-90 rounded-t-full"} z-1 size-6 flex items-center justify-center bg-[#70e0001a] border border-borderSecondary`} />
-            </button>
-        </div>
+    function handleOnBtnClick(url) {
+        isMobile() && onToggleOpen(false)
+        nevigate(url)
+    }
+
+    return <div className={`flex flex-col box-border h-main justify-between bg-white border-r border-border3 overflow-y-auto ${open ? "side-sec-open" : "side-sec-close max-mob:mob-side-sec-close"}`}>
         <div className="h-full">
             <ul>
                 {
                     data.map(({ icon, name, nevigate: url }, index) => <li key={index} className="mb-1">
-                        <Button Icon={icon} title={open && name} style={!open && "w-fit"} deactiveStyle="py-2 px-3" activeStyle="active-btn" active={pathname === url} onClick={() => nevigate(url)} />
+                        <Button Icon={icon} title={open && name} style={!open && "w-fit"} deactiveStyle="py-2 px-3" activeStyle="active-btn" active={pathname === url} onClick={() => handleOnBtnClick(url)} isHover={!isMobile()} />
                     </li>)
                 }
             </ul>
         </div>
         <div>
             <div>
-                <Button Icon={lifeBuoy} title={open && "Support"} style={!open && "w-fit"} containerStyle="mb-1" activeStyle="active-btn" active={pathname === "/support"} />
-                <Button Icon={settingsIcon} title={open && "Settings"} style={!open && "w-fit"} containerStyle="mb-1" activeStyle="active-btn" active={pathname === "/settings"} onClick={() => nevigate("/settings")} isHover={false} />
+                <Button Icon={lifeBuoy} title={open && "Support"} style={!open && "w-fit"} containerStyle="mb-1" activeStyle="active-btn" active={pathname === "/support"} isHover={!isMobile()} />
+                <Button Icon={settingsIcon} title={open && "Settings"} style={!open && "w-fit"} containerStyle="mb-1" activeStyle="active-btn" active={pathname === "/settings"} onClick={() => handleOnBtnClick("/settings")} isHover={!isMobile()} />
                 {open ? <ToggleButton toggleBetween={["English", "العربية"]} onToggle={() => { }} style="mt-1 mb-6" /> : null}
             </div>
             <div className="flex justify-center border-t border-[#E4E7EC] pt-6 items-center gap-3 text-left">

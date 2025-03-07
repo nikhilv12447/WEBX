@@ -7,7 +7,7 @@ function StateDropdown({ countryId, style, onSelect, defaultValue, placeHolder }
     const [statesData, setStateData] = useState()
 
     useEffect(() => {
-        countryId ? setStateData(states.find(({ id }) => `${id}` === countryId)?.states.map(({ id, name }) => ({ value: `${id}`, text: name }))) : setStateData(null)
+        countryId ? setStateData(states.find(({ id }) => `${id}` === countryId)?.states.map(({ id, name }) => ({ value: `${id}`, text: name }))) : setStateData([])
     }, [countryId])
 
     return <DropDown options={statesData} onSelect={onSelect} style={style} defaultValue={defaultValue} placeHolder={placeHolder} />

@@ -77,15 +77,15 @@ function Grid({ data }) {
 function FirstFold() {
 
     return <div>
-        <div className={`py-[60px] mx-auto relative text-center`}>
-            <h1 className="font-mikado font-bold text-[56px]/[75px] -tracking-[3px] text-[#002333]">Ethneen Community</h1>
-            <p className="font-stolzl normal-16 text-[#627882CC] mx-auto max-w-[638px] mb-[30px]">Stay Informed with the Latest Insights: Explore articles, news, and expert opinions on the future of work, freelancing trends, and business innovation</p>
+        <div className={`py-[60px] mx-auto relative text-center max-mob:p-6`}>
+            <h1 className="community-heading-style max-mob:mob-community-heading-style">Ethneen Community</h1>
+            <p className="font-stolzl normal-16 text-[#627882CC] mx-auto max-w-[638px] mb-[30px] max-mob:text-[12px]">Stay Informed with the Latest Insights: Explore articles, news, and expert opinions on the future of work, freelancing trends, and business innovation</p>
             <SearchByKeyword style="mx-auto" />
             <Image url={ethneeIcon} style="absolute w-[146px] top-[57px] left-[181px] max-tab:hidden" />
             <Image url={ethneeIcon} style="absolute w-[217px] right-[98px] -bottom-[62px] max-tab:hidden" />
         </div>
-        <div className="py-[60px]">
-            <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[50px] text-center">Latest <span className="text-gradent">Topics</span></p>
+        <div className="py-[60px] max-mob:py-6">
+            <p className="latest-topic-comm-heading-style max-mob:mob-latest-topic-comm-heading-style">Latest <span className="text-gradent">Topics</span></p>
             <div className="flex gap-5 mb-[50px] justify-center max-mob:grid grid-cols-1">
                 {
                     data.map(({ desription, imageUrl, title }, index) => <CommunityCard key={index} desription={desription} imageUrl={imageUrl} title={title} style="comm-card-style mx-auto" btnText="View Discussions" />)
@@ -93,8 +93,8 @@ function FirstFold() {
             </div>
         </div>
 
-        <div className="py-[60px] bg-secondaryGradent">
-            <span className="block font-stolzl font-medium text-[56px]/[67px] text-white -tracking-[3px] mb-[50px] text-center">Upcoming Events</span>
+        <div className="py-[60px] bg-secondaryGradent max-mob:py-6">
+            <span className="comm-event-heading-style max-mob:mob-comm-event-heading-style">Upcoming Events</span>
 
             <div className="flex gap-5 mb-[50px] justify-center max-mob:grid grid-cols-1">
                 {
@@ -112,10 +112,10 @@ function FirstFold() {
             </div>
         </div>
 
-        <div className="py-[60px]">
-            <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[20px] text-center">Browse by <span className="text-gradent">Categories</span></p>
+        <div className="py-[60px] max-mob:py-6">
+            <p className="comm-browse-heading-style max-mob:mob-comm-browse-heading-style">Browse by <span className="text-gradent">Categories</span></p>
 
-            <Tabs tabs={tabData} tabStyle="override-tab-style"/>
+            <Tabs tabs={tabData} tabStyle="override-tab-style max-mob:!grid grid-cols-2"/>
 
             <div className="flex gap-[10px] justify-center mt-[50px]">
                 <Button title="01" activeStyle="active-pagination-btn" active isHover={false}/>

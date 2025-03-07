@@ -14,13 +14,13 @@ function Action() {
         videoRef.current.play()
     }
 
-    return <div className="">
-        <p className="font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[50px] text-center">See <span className="text-gradent">Ethneen</span> in Action</p>
+    return <div className="max-mob:px-6">
+        <p className="action-heading-style max-mob:mob-action-heading-style">See <span className="text-gradent">Ethneen</span> in Action</p>
         <div className="mb-[50px] relative">
             <video ref={videoRef} src={videoSrc} className="rounded-[25px]" controls={isPlay} onPause={() => setIsplay(false)}></video>
             {
                 !isPlay && <div className="absolute w-full h-full video-gradent top-0 rounded-[25px] flex justify-center items-center cursor-pointer" onClick={handleVideoPlay}>
-                    <Image style="flex justify-center items-center size-24 rounded-full bg-secondaryGradent" url={playIcon} />
+                    <Image style="flex justify-center items-center size-24 rounded-full bg-secondaryGradent max-mob:size-20" url={playIcon} />
                 </div>
             }
         </div>

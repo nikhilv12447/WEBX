@@ -56,15 +56,15 @@ function DropDown({ options = [], onSelect, placeHolder, defaultValue, style }) 
         setTimeout(() => setShowDropdown(false), 500)
     }
 
-    return <div className={`border border-[#D0D5DD] rounded-lg relative bg-white ${style}`}>
+    return <div className={`dropdown-container-style ${style}`}>
         <div className="flex gap-1 justify-between items-center py-[10px] pl-[14px] pr-[12px]" onClick={() => handleDropdown(true)}>
             {emoji && <span className="font-twemoji">{emoji}</span>}
-            <input ref={inputRef} className="dropdown-input" placeholder={placeHolder} value={queryStr} onChange={handleOnChange} onBlur={handleOnBlur} />
+            <input ref={inputRef} className="dropdown-input" placeholder={placeHolder} value={queryStr} onChange={handleOnChange} onBlur={handleOnBlur} autocomplete="off" />
             <button type="button"><Image url={downArrowIcon} style={showDropdown ? " down-arrow rotate-180" : "down-arrow"} /></button>
         </div>
 
         {
-            showDropdown && <div className="absolute top-12 max-h-52 overflow-y-auto w-full z-[2] bg-white border border-borderSecondary rounded-lg shadow-[0_0_4px_0_#00000080]" onClick={handleOnClick}>
+            showDropdown && <div className="absolute top-12 max-h-52 overflow-y-auto w-full !z-[2] bg-white border border-borderSecondary rounded-lg shadow-[0_0_4px_0_#00000080]" onClick={handleOnClick}>
                 {
                     filterOptions(queryStr, options).map(({ value, text, emoji }, index) =>
                         <div key={index} className="flex items-center gap-1 p-2 cursor-pointer border-b border-borderSecondary"

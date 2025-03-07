@@ -21,7 +21,7 @@ function IdVerification({ }) {
                 <h1 className="font-medium text-[32px] text-white mb-[10px]">Identity Verification</h1>
                 <p className="font-normal text-base text-white max-w-[404px] opacity-80">Please choose to submit any of the government-issued documents listed below. User general infos are common for any documents submitted.</p>
             </div>
-            <Image url={userIdentityIcon} style="inline-block mob:float-right w-[185px]" width="185px" height="142px"/>
+            <Image url={userIdentityIcon} style="inline-block mob:float-right w-[185px]" width="185px" height="142px" />
         </div>
 
         <div className="grid grid-cols-3 max-mob:grid-cols-2 max-xsmob:grid-cols-1 gap-6 mb-6">

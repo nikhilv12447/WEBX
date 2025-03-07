@@ -7,7 +7,7 @@
         @apply !w-[420px];
     }
 
-    .comm-card-style .community-image{
+    .comm-card-style .community-image {
         @apply h-[236px];
     }
 
@@ -23,13 +23,46 @@
     }
 
     .override-tab-style {
-        @apply shadow-[0_5px_8px_0_#161D2414] w-fit rounded-[13px] p-[5px] mx-auto max-mob:!grid grid-cols-3;
+        @apply shadow-[0_5px_8px_0_#161D2414] w-fit rounded-[13px] p-[5px] mx-auto;
     }
 
     .override-tab-style .tab-override-inactive-style {
-        @apply font-semibold  text-[#111111]
+        @apply font-semibold text-[#111111]
     }
+
     .override-tab-style .tab-override-active-style {
         @apply font-semibold rounded-[11px]
+    }
+
+    .community-heading-style {
+        @apply font-mikado font-bold text-[56px]/[75px] -tracking-[3px] text-[#002333];
+    }
+
+    .mob-community-heading-style {
+        @apply text-5xl
+    }
+
+    .latest-topic-comm-heading-style {
+        @apply font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[50px] text-center;
+    }
+
+    .mob-latest-topic-comm-heading-style {
+        @apply text-5xl mb-[25px]
+    }
+
+    .comm-event-heading-style {
+        @apply block font-stolzl font-medium text-[56px]/[67px] text-white -tracking-[3px] mb-[50px] text-center;
+    }
+
+    .mob-comm-event-heading-style {
+        @apply text-5xl mb-[25px]
+    }
+
+    .comm-browse-heading-style{
+        @apply font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[20px] text-center;
+    }
+
+    .mob-comm-browse-heading-style{
+        @apply text-5xl
     }
 }

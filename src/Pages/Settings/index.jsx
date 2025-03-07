@@ -53,7 +53,7 @@ function Settings({ }) {
             {
                 settingTabs.map((({ key, text }, index) => {
                     if (key === activeTab) {
-                        return <Button key={index} title={text} activeStyle="active-tab"  active />
+                        return <Button key={index} title={text} activeStyle="active-tab" active />
                     }
                     return <div key={index} className="py-3 px-5 font-normal text-base text-[#00233380] cursor-pointer" onClick={() => setActiveTab(key)}>
                         {text}
@@ -61,7 +61,6 @@ function Settings({ }) {
                 }))
             }
         </div>
-
         {getScreen(activeTab)}
     </div>
 }

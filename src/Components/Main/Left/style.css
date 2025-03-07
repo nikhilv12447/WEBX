@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer base {
     :root {
         --left-section-height: calc(100vh - 72px);
     }
@@ -15,5 +15,17 @@
 
     .active-btn {
         @apply w-[248px];
+    }
+
+    .side-sec-open {
+        @apply w-[268px] p-4;
+    }
+
+    .side-sec-close {
+        @apply w-[90px] p-4;
+    }
+
+    .mob-side-sec-close {
+        @apply w-0 p-0
     }
 }

@@ -3,19 +3,27 @@
 @tailwind utilities;
 
 @layer components {
-    .dot {
-        @apply size-[6px] rounded-full;
+    .expert-container-style{
+        @apply pl-[100px] py-[60px] text-center;
     }
 
-    .red {
-        @apply bg-red-800;
+    .mob-expert-container-style{
+        @apply p-6
     }
 
-    .green {
-        @apply bg-[#17B26A];
+    .expert-heading-style{
+        @apply font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] pr-[100px] mb-5;
     }
 
-    .yellow {
-        @apply bg-yellow-500;
+    .mob-expert-heading-style{
+        @apply p-6 text-2xl tracking-normal p-0;
+    }
+
+    .mob-expert-tab-style{
+        @apply !pr-0 !grid grid-cols-3;
+    }
+
+    .mob-expert-tab-style span{
+        @apply !pr-0 !text-sm
     }
 }

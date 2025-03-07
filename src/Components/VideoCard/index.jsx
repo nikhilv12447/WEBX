@@ -14,8 +14,8 @@ function VideoCard({ title, desription, style, imageStyle }) {
             <Image url={ethneenIcon} style={imageStyle} />
         </div >
         <div className="pt-5 text-left basis-1/2">
-            <h4 className="font-stolzl font-semibold text-2xl text-[#002333] mb-[10px]">{title}</h4>
-            <p className="font-stolzl normal-18 text-[#00233380]">{desription}</p>
+            <h4 className="video-card-heading max-mob:mob-video-card-heading">{title}</h4>
+            <p className="video-card-subheading normal-18 max-mob:mob-video-card-subheading">{desription}</p>
         </div>
     </div>
 }

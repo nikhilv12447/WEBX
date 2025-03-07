@@ -2,4 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {}
+@layer components {
+    .faq-heading-style{
+        @apply font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[50px] text-center
+    }
+    .mob-faq-heading-style{
+        @apply text-2xl tracking-normal
+    }
+}

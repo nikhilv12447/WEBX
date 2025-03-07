@@ -11,7 +11,9 @@
         @apply  py-[15px] flex justify-between items-center max-mob:px-4;
     }
 
-    .hamburger-style {}
+    .hamburger-modal-toggle-style .btn{
+        @apply text-sm
+    }
 
     .side-menu-style {
         @apply !justify-end z-10;

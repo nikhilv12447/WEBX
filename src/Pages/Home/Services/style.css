@@ -27,4 +27,32 @@
     .inactive-card p {
         @apply text-[#002333CC];
     }
+
+    .serv-container-style{
+        @apply px-[100px] py-[60px];
+    }
+
+    .mob-serv-container-style{
+        @apply p-6;
+    }
+
+    .serv-heading-style {
+        @apply font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-5;
+    }
+
+    .mob-serv-heading-style {
+        @apply text-xl tracking-normal
+    }
+
+    .mob-serv-toggle-btn-style .btn {
+        @apply text-sm p-3
+    }
+
+    .serv-card-container-style{
+        @apply col-start-2 col-end-4;
+    }
+
+    .mob-serv-card-container-style {
+        @apply col-start-auto col-end-auto;
+    }
 }
