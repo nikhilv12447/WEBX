@@ -39,7 +39,7 @@
     }
 
     .mob-community-heading-style {
-        @apply text-5xl
+        @apply text-4xl tracking-normal
     }
 
     .latest-topic-comm-heading-style {
@@ -47,7 +47,7 @@
     }
 
     .mob-latest-topic-comm-heading-style {
-        @apply text-5xl mb-[25px]
+        @apply text-4xl mb-[25px] tracking-normal
     }
 
     .comm-event-heading-style {
@@ -55,7 +55,7 @@
     }
 
     .mob-comm-event-heading-style {
-        @apply text-5xl mb-[25px]
+        @apply text-4xl mb-[25px] tracking-normal
     }
 
     .comm-browse-heading-style{
@@ -63,6 +63,6 @@
     }
 
     .mob-comm-browse-heading-style{
-        @apply text-5xl
+        @apply text-4xl tracking-normal
     }
 }
