@@ -25,7 +25,7 @@ function Action() {
             }
         </div>
 
-        <Button title="Explore More" activeStyle="w-fit mx-auto" isHover={false} active />
+        <Button title="Explore More" activeStyle="w-fit mx-auto shadow-mainShadow" isHover={false} active />
     </div>
 }
 

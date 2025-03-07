@@ -18,8 +18,8 @@
     .video-list-video-card{
         @apply flex gap-4 mb-6;
     }
-    .mob-video-list-video-card .video-thumbnil {
-        @apply h-[175px]
+    .mob-video-list-video-card .hour-style {
+        @apply top-1 left-1;
     }
     .skill-heading-style{
         @apply font-stolzl -tracking-[3px] font-semibold text-[56px]/[72px] text-[#002333] mb-[50px] text-center

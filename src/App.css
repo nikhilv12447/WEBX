@@ -2,16 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .modal {
-        @apply fixed w-full h-full z-[1] bg-black top-0 left-0;
-    }
-
-    .dropdown {
-        @apply relative z-[2] text-red-800;
-    }
-
-    .dropdown .list {
-        @apply absolute top-0;
-    }
-}
+@layer components {}

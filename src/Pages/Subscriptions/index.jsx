@@ -28,36 +28,38 @@ function Subscriptions() {
         </div>
 
         <div className="bg-white rounded-2xl border border-[#0023334D]">
-            <div className="flex justify-between items-center mb-[14px] px-6 py-5">
-                <h4 className="font-medium text-lg text-primary-color">Subscription History</h4>
+            <div className="flex justify-between items-center mb-[14px] px-6 py-5 max-mob:block">
+                <h4 className="font-medium text-lg text-primary-color max-mob:mb-1">Subscription History</h4>
                 <SearchTypeaHead placeholder="Enter date to search" />
             </div>
             <Notice message="If your free connect ends or expired, Each time 1 connect will be reduce from your total connect while you bid or send job proposal." />
+            <div className="max-mob:max-w-[376px] overflow-x-auto">
 
-            <table className="subscription-hisory">
-                <tr>
-                    <th className="pl-6">Type</th>
-                    <th>Price</th>
-                    <th>Connect</th>
-                    <th>Payment Gateway</th>
-                    <th>Payment Status</th>
-                    <th>Status</th>
-                    <th>Purchase Date</th>
-                    <th className="pr-6">Expiry Date</th>
-                </tr>
-                {
-                    data.map(({ type, price, connect, paymentGateway, paymentStatus, status, purchaseDate, expiryDate }, index) => <tr key={index}>
-                        <td className={index === data.length - 1 ? "pl-6 rounded-bl-2xl" : "pl-6"}>{type}</td>
-                        <td>{price}</td>
-                        <td>{connect}</td>
-                        <td>{paymentGateway}</td>
-                        <td><Status status={paymentStatus.title} type={paymentStatus.type} /></td>
-                        <td><Status status={status.title} type={status.type} /></td>
-                        <td>{purchaseDate}</td>
-                        <td className={index === data.length - 1 ? "pr-6 rounded-br-2xl" : "pr-6"}>{expiryDate}</td>
-                    </tr>)
-                }
-            </table>
+                <table className="subscription-hisory ">
+                    <tr>
+                        <th className="pl-6">Type</th>
+                        <th>Price</th>
+                        <th>Connect</th>
+                        <th>Payment Gateway</th>
+                        <th>Payment Status</th>
+                        <th>Status</th>
+                        <th>Purchase Date</th>
+                        <th className="pr-6">Expiry Date</th>
+                    </tr>
+                    {
+                        data.map(({ type, price, connect, paymentGateway, paymentStatus, status, purchaseDate, expiryDate }, index) => <tr key={index}>
+                            <td className={index === data.length - 1 ? "pl-6 rounded-bl-2xl" : "pl-6"}>{type}</td>
+                            <td>{price}</td>
+                            <td>{connect}</td>
+                            <td>{paymentGateway}</td>
+                            <td><Status status={paymentStatus.title} type={paymentStatus.type} /></td>
+                            <td><Status status={status.title} type={status.type} /></td>
+                            <td>{purchaseDate}</td>
+                            <td className={index === data.length - 1 ? "pr-6 rounded-br-2xl" : "pr-6"}>{expiryDate}</td>
+                        </tr>)
+                    }
+                </table>
+            </div>
         </div>
     </div>
 }

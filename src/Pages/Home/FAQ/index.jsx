@@ -32,7 +32,7 @@ function FAQs() {
                 })
             }
         </div>
-        <Button title="Contact our Team" activeStyle="w-fit mx-auto bg-secondaryGradent" isHover={false} active />
+        <Button title="Contact our Team" activeStyle="w-fit mx-auto bg-secondaryGradent shadow-mainShadow" isHover={false} active />
         <Image url={gradentGear} style="absolute left-0 top-[550px] -z-[1]" />
     </div>
 }

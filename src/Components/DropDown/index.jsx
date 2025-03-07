@@ -59,7 +59,7 @@ function DropDown({ options = [], onSelect, placeHolder, defaultValue, style }) 
     return <div className={`dropdown-container-style ${style}`}>
         <div className="flex gap-1 justify-between items-center py-[10px] pl-[14px] pr-[12px]" onClick={() => handleDropdown(true)}>
             {emoji && <span className="font-twemoji">{emoji}</span>}
-            <input ref={inputRef} className="dropdown-input" placeholder={placeHolder} value={queryStr} onChange={handleOnChange} onBlur={handleOnBlur} autocomplete="off" />
+            <input ref={inputRef} className="dropdown-input" placeholder={placeHolder} value={queryStr} onChange={handleOnChange} onBlur={handleOnBlur} autoComplete="off" />
             <button type="button"><Image url={downArrowIcon} style={showDropdown ? " down-arrow rotate-180" : "down-arrow"} /></button>
         </div>
 
